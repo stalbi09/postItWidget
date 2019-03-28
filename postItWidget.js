@@ -1,7 +1,7 @@
 class PostItWidget extends Widget {
 	
 	constructor(id, app) {
-		super(id, PostItModel, PosteItView, PosteItController, app);
+		super(id, PostItModel, PostItView, PostItController, app);
 	}
 	
 	setUp() {
