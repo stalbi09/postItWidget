@@ -67,7 +67,7 @@ class PostItView extends WidgetView {
 		this.text=HH.create("textarea"); 
 		this.try.text.innerHTML="Veuillez saisir votre texte !";
 		// on utilise value pour ecrire decu ou bien inner.HTML
-		SS.style(this.try.text, {"position": "relative", "width": "100px", "height": h + "100px", "overflow": "hidden", "backgroundColor": "rgba(255,0,0,0.3)"});
+		SS.style(this.try.text, {"position": "relative", "width": "50px", "height": "50px", "overflow": "hidden", "backgroundColor": "rgba(255, 246, 143, 1)"});
 		this.try.stage.appendChild(this.try.text);
 		
 		var c = prompt("Veuillez choisir une couleur de fond");
