@@ -77,6 +77,7 @@ class PostItView extends WidgetView {
 		this.try.stage.appendChild(this.try.footer);
 		 // est ce que c ici que lutilisateur saisie son texte?
 		// c ici quon fait ss background et tt
+	}
 	
 	update(title, link) {
 	}
