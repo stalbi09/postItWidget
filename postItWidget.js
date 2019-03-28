@@ -7,7 +7,7 @@ class PostItWidget extends Widget {
 	setUp() {
 		super.setUp();
 		this.header = true;
-		this.footer = true ;
+		this.footer = false;
 		this.sizeX = 2;
 		this.sizeY = 1.5;
 		this.radius = 10;
@@ -39,7 +39,7 @@ class PostItModel extends WidgetModel {
 	text area c un element hmtl
 */
 	creatPostIt(c,p) {
-		let postIt= new postItWidget;
+		let postIt= new PostItWidget;
 		// est ce que c moi qui va definir aleatoirement le id du nouveau widget ou pas ?
 		// comment changer le vew de mon nouveau widget a partir dici?
 		// comment enregister le texte saisie par lutilisateur ensuite
@@ -64,17 +64,20 @@ class PostItView extends WidgetView {
 	draw() {
 		super.draw();
 		this.try.header.innerHTML = "Post-it";
-		this.text=HH.create("textarea"); // on utilise value pour ecrire decu ou bien inner.HTML
-		SS.style(this.try.text, {"position": "relative", "width": "100px", "height": h + "100px", "overflow": "hidden", "backgroundColor": "yellow"});
+		this.text=HH.create("textarea"); 
+		this.try.text.innerHTML="Veuillez saisir votre texte !";
+		// on utilise value pour ecrire decu ou bien inner.HTML
+		SS.style(this.try.text, {"position": "relative", "width": "100px", "height": h + "100px", "overflow": "hidden", "backgroundColor": "rgba(255,0,0,0.3)"});
 		this.try.stage.appendChild(this.try.text);
 		
 		var c = prompt("Veuillez choisir une couleur de fond");
-	 	var p = prompt("Veuillez choisir une police")
-
-	        this.try.footer.innerHTML = "Ajouter un Post-It";
-		SS.style(this.try.footer, {"userSelect": "none", "cursor": "pointer"});
-		Events.on(this.try.footer, "click", event => this.try.mvc.controller.ajoutPostIt(c,p));
-		this.try.stage.appendChild(this.try.footer);
+	 	var p = prompt("Veuillez choisir une police");
+		
+		this.ajout=HH.create("button");
+	        this.try.ajout.innerHTML = "Ajouter un Post-It";
+		SS.style(this.try.ajout, {"userSelect": "none", "cursor": "pointer"});
+		Events.on(this.try.ajout, "click", event => this.try.mvc.controller.ajoutPostIt(c,p));
+		this.try.stage.appendChild(this.try.ajout);
 		 // est ce que c ici que lutilisateur saisie son texte?
 		// c ici quon fait ss background et tt
 	}
