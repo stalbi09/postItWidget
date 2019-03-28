@@ -65,21 +65,18 @@ class PostItView extends WidgetView {
 		super.draw();
 		this.try.header.innerHTML = "Post-it";
 		this.text=HH.create("textarea"); // on utilise value pour ecrire decu ou bien inner.HTML
-		SS.style(this.text, {"position": "relative", "width": "100px", "height": h + "100px", "overflow": "hidden", "backgroundColor": "yellow"});
+		SS.style(this.try.text, {"position": "relative", "width": "100px", "height": h + "100px", "overflow": "hidden", "backgroundColor": "yellow"});
+		this.try.stage.appendChild(this.try.text);
 		
-
-
-
 		var c = prompt("Veuillez choisir une couleur de fond");
-	 	 var p = prompt("Veuillez choisir une police")
+	 	var p = prompt("Veuillez choisir une police")
 
-	     this.try.footer.innerHTML = "Ajouter un Post-It";
-		 CSS.style(this.try.footer, {"userSelect": "none", "cursor": "pointer"});
-		 Events.on(this.try.footer, "click", event => this.try.mvc.controller.ajoutPostIt(c,p));
-		 this.try.stage.appendChild(this.try.footer);
+	        this.try.footer.innerHTML = "Ajouter un Post-It";
+		SS.style(this.try.footer, {"userSelect": "none", "cursor": "pointer"});
+		Events.on(this.try.footer, "click", event => this.try.mvc.controller.ajoutPostIt(c,p));
+		this.try.stage.appendChild(this.try.footer);
 		 // est ce que c ici que lutilisateur saisie son texte?
 		// c ici quon fait ss background et tt
-	}
 	
 	update(title, link) {
 	}
