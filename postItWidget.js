@@ -11,9 +11,7 @@ class PostItWidget extends Widget {
 		this.sizeX = 2;
 		this.sizeY = 0.5;
 		this.radius = 10;
-		this.backgroundColor="";
-		this.fontFamily="";
-		this.textContent="";
+		
 	}
 	
 	async ready() {
