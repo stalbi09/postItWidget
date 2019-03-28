@@ -9,7 +9,7 @@ class PostItWidget extends Widget {
 		this.header = true;
 		this.footer = true ;
 		this.sizeX = 2;
-		this.sizeY = 0.5;
+		this.sizeY = 1.5;
 		this.radius = 10;
 		
 	}
