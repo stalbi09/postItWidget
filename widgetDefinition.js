@@ -184,11 +184,11 @@ class WidgetView extends Try {
 		let h = this.try.mvc.main.defaultSize * this.try.mvc.main.sizeY;
 		
 		this.try.stage = HH.create("div");
-		SS.style(this.try.stage, {"position": "relative", "width": w + "px", "height": h + "px", "overflow": "hidden", "backgroundColor": "lightcyan", "borderRadius": this.try.mvc.main.radius + "px"});
+		SS.style(this.try.stage, {"position": "relative", "width": w + "px", "height": h + "px", "overflow": "hidden", "backgroundColor": "powderblue", "borderRadius": this.try.mvc.main.radius + "px"});
 		
 		if(this.try.mvc.main.header) {
 			this.try.header = HH.create("div");
-			SS.style(this.try.header, {"z-index": 100, "userSelect": "none", "width": "100%", "height": "25px", "lineHeight": "25px", "textAlign": "center", "border-top-left-radius": this.try.mvc.main.radius + "px", "border-top-right-radius": this.try.mvc.main.radius + "px","backgroundColor": "lemonchiffon"});
+			SS.style(this.try.header, {"z-index": 100, "userSelect": "none", "width": "100%", "height": "25px", "lineHeight": "25px", "textAlign": "center", "border-top-left-radius": this.try.mvc.main.radius + "px", "border-top-right-radius": this.try.mvc.main.radius + "px","backgroundColor": "khaki"});
 			this.try.header.innerHTML = this.try.mvc.main.name;
 			this.try.stage.appendChild(this.try.header);
 		}
