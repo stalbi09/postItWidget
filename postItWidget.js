@@ -52,28 +52,28 @@ class PostItView extends WidgetView {
 		this.try.header.innerHTML = "Post-it";
 		this.text=HH.create("textarea"); 
 		// on utilise value pour ecrire decu ou bien inner.HTML
-		SS.style(this.try.text, {"position": "fixed", "width": "300px", "height": "100px", "backgroundColor": "rgba(255, 246, 143, 1)"
+		SS.style(this.try.text, {"position": "fixed", "width": "250px", "height": "100px", "backgroundColor": "rgba(255, 246, 143, 1)"
 , "overflow": "hidden"});
 		//this.try.text.innerHTML="Veuillez saisir votre texte !";
 		this.try.stage.appendChild(this.try.text);
 
 
-		this.unDiv= HH.create("div");
+		//this.unDiv= HH.create("div");
 		this.couleur= HH.create("input");
 		SS.style(this.try.couleur, {"width" : "50%", "height" : "50%"});
 		this.couleur.setAttribute("type","text");
 		this.couleur.setAttribute("maxlength","12");
 		this.couleur.setAttribute("name","couleur");
-		this.try.unDiv.appendChild(this.try.couleur);
+		this.try.stage.appendChild(this.try.couleur);
 
 		this.police= HH.create("input");
 		SS.style(this.try.police, {"width" : "50%", "height" : "50%"});
 		this.police.setAttribute("type","text");
 		this.police.setAttribute("name","police");
 		this.police.setAttribute("maxlength","12");
-		this.try.unDiv.appendChild(this.try.police);
+		this.try.stage.appendChild(this.try.police);
 		
-		this.try.stage.appendChild(this.try.unDiv);
+		//this.try.stage.appendChild(this.try.unDiv);
 
 	 	
 
