@@ -61,14 +61,14 @@ class PostItView extends WidgetView {
 		this.div1= HH.create("div");
 		this.div2= HH.create("div");
 		this.couleur= HH.create("input");
-		SS.style(this.try.couleur, {"position": "absolute","top":"30px","left" : "10px","width" : "100px", "height" : "25px","pattern" : "la couleur", "backgroudColor" : "lavenderblush"});
+		SS.style(this.try.couleur, {"position": "absolute","top":"30px","left" : "10px","width" : "100px", "height" : "25px","pattern" : "la couleur", "backgroundColor" : "lavender"});
 		this.couleur.setAttribute("type","text");
 		this.couleur.setAttribute("size","8");
 		this.couleur.setAttribute("name","couleur");
 		this.try.div1.appendChild(this.try.couleur);
 
 		this.police= HH.create("input");
-		SS.style(this.try.police, {"position": "absolute","top":"30px","left" : "160px","width" : "100px", "height" : "25px", "pattern" : "la police", "backgroudColor" : "lavenderblush"});
+		SS.style(this.try.police, {"position": "absolute","top":"30px","left" : "160px","width" : "100px", "height" : "25px", "pattern" : "la police", "backgroundColor" : "lavender"});
 		this.police.setAttribute("type","text");
 		this.police.setAttribute("name","police");
 		this.police.setAttribute("size","8");
@@ -84,14 +84,14 @@ class PostItView extends WidgetView {
 
 	    	this.btnColor=HH.create("button");
 	     	this.try.btnColor.innerHTML = "Appliquer";
-		SS.style(this.try.ajout, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"65px","left" : "15px"});
-		Events.on(this.try.ajout, "click", event => this.try.mvc.controller.changeColor());
+		SS.style(this.try.btnColor, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"65px","left" : "15px", "backgroundColor" : "lavender"});
+		Events.on(this.try.btnColor, "click", event => this.try.mvc.controller.changeColor());
 		this.try.stage.appendChild(this.try.btnColor);
 		
 		this.btnPolice=HH.create("button");
 	     	this.try.btnPolice.innerHTML = "Appliquer";
-		SS.style(this.try.ajout, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"65px","left" : "170px"});
-		Events.on(this.try.ajout, "click", event => this.try.mvc.controller.changePolice());
+		SS.style(this.try.btnPolice, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"65px","left" : "170px", "backgroundColor" : "lavender"});
+		Events.on(this.try.btnPolice, "click", event => this.try.mvc.controller.changePolice());
 		this.try.stage.appendChild(this.try.btnPolice);
 		
 	}
