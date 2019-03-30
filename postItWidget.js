@@ -97,13 +97,13 @@ class PostItView extends WidgetView {
 		
 		this.newPostIt=HH.create("button");
 	     	this.try.newPostIt.innerHTML = "New";
-		SS.style(this.try.newPostIt, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"30px","left" : "120px", "backgroundColor" : "lavender"});
+		SS.style(this.try.newPostIt, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"30px","left" : "180px", "backgroundColor" : "lavender"});
 		Events.on(this.try.newPostIt, "click", event => this.try.mvc.controller.addPostIt());
 		this.try.stage.appendChild(this.try.newPostIt);
 		
 		this.listePuce=HH.create("button");
 	     	this.try.listePuce.innerHTML = "liste";
-		SS.style(this.try.listePuce, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"30px","left" : "150px", "backgroundColor" : "lavender"});
+		SS.style(this.try.listePuce, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"30px","left" : "190px", "backgroundColor" : "lavender"});
 		Events.on(this.try.listePuce, "click", event => this.try.mvc.controller.addListe());
 		this.try.stage.appendChild(this.try.listePuce);
 		
