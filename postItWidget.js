@@ -65,7 +65,7 @@ class PostItView extends WidgetView {
 		this.try.header.innerHTML = "Post-it";
 		this.text=HH.create("textarea"); 
 		// on utilise value pour ecrire decu ou bien inner.HTML
-		SS.style(this.try.text, {"position": "relative", "width": "100px", "height": h + "100px", "backgroundColor": "yellow","fontFamily" : "Calibri", "overflow": "hidden" : });
+		SS.style(this.try.text, {"position": "relative", "width": "100px", "height": h + "100px", "backgroundColor": "yellow","fontFamily" : "Calibri", "overflow": "hidden" });
 		//this.try.text.innerHTML="Veuillez saisir votre texte !";
 		this.try.stage.appendChild(this.try.text);
 // http://www.flatuicolorpicker.com/yellow-rgba-color-code pour les couleur en rgba
