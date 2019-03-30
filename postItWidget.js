@@ -52,7 +52,7 @@ class PostItView extends WidgetView {
 		this.try.header.innerHTML = "Post-it";
 		this.text=HH.create("textarea"); 
 		// on utilise value pour ecrire decu ou bien inner.HTML
-		SS.style(this.try.text, {"position": "absolute","top":"70px","left" : "10px", "width": "280px", "height": "100px", "backgroundColor": "rgba(255, 246, 143, 1)"
+		SS.style(this.try.text, {"position": "absolute","top":"100px","left" : "10px", "width": "280px", "height": "100px", "backgroundColor": "rgba(255, 246, 143, 1)"
 , "overflow": "hidden"});
 		//this.try.text.innerHTML="Veuillez saisir votre texte !";
 		this.try.stage.appendChild(this.try.text);
