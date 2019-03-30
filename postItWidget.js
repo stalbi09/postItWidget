@@ -91,7 +91,7 @@ class PostItView extends WidgetView {
 		
 		this.btnPolice=HH.create("button");
 	     	this.try.btnPolice.innerHTML = "Appliquer";
-		SS.style(this.try.btnPolice, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"65px","left" : "110px", "backgroundColor" : "lavender"});
+		SS.style(this.try.btnPolice, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"65px","left" : "95px", "backgroundColor" : "lavender"});
 		Events.on(this.try.btnPolice, "click", event => this.try.mvc.controller.changePolice());
 		this.try.stage.appendChild(this.try.btnPolice);
 		
