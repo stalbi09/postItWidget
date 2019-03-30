@@ -59,7 +59,7 @@ class PostItView extends WidgetView {
 
 
 		this.unDiv= HH.create("div");
-		this.try.stage.appendChild(this.try.div1);
+		this.try.stage.appendChild(this.try.unDiv);
 		this.couleur= HH.create("input");
 		SS.style(this.try.couleur, {"width" : "50%", "height" : "50%"});
 		this.couleur.setAttribute("type","text");
