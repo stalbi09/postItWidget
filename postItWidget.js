@@ -61,14 +61,14 @@ class PostItView extends WidgetView {
 		this.div1= HH.create("div");
 		this.div2= HH.create("div");
 		this.couleur= HH.create("input");
-		SS.style(this.try.couleur, {"position": "absolute","top":"30px","left" : "10px","width" : "100px", "height" : "25px","pattern" : "la couleur", "backgroundColor" : "lavender"});
+		SS.style(this.try.couleur, {"position": "absolute","top":"30px","left" : "10px","width" : "100px", "height" : "25px", "backgroundColor" : "lavender"});
 		this.couleur.setAttribute("type","text");
 		this.couleur.setAttribute("size","8");
 		this.couleur.setAttribute("name","couleur");
 		this.try.div1.appendChild(this.try.couleur);
 
 		this.police= HH.create("input");
-		SS.style(this.try.police, {"position": "absolute","top":"30px","left" : "160px","width" : "100px", "height" : "25px", "pattern" : "la police", "backgroundColor" : "lavender"});
+		SS.style(this.try.police, {"position": "absolute","top":"30px","left" : "115px","width" : "100px", "height" : "25px", "backgroundColor" : "lavender"});
 		this.police.setAttribute("type","text");
 		this.police.setAttribute("name","police");
 		this.police.setAttribute("size","8");
@@ -88,11 +88,24 @@ class PostItView extends WidgetView {
 		Events.on(this.try.btnColor, "click", event => this.try.mvc.controller.changeColor());
 		this.try.stage.appendChild(this.try.btnColor);
 		
+		
 		this.btnPolice=HH.create("button");
 	     	this.try.btnPolice.innerHTML = "Appliquer";
 		SS.style(this.try.btnPolice, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"65px","left" : "170px", "backgroundColor" : "lavender"});
 		Events.on(this.try.btnPolice, "click", event => this.try.mvc.controller.changePolice());
 		this.try.stage.appendChild(this.try.btnPolice);
+		
+		this.newPostIt=HH.create("button");
+	     	this.try.newPostIt.innerHTML = "New";
+		SS.style(this.try.newPostIt, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"30px","left" : "120px", "backgroundColor" : "lavender"});
+		Events.on(this.try.newPostIt, "click", event => this.try.mvc.controller.addPostIt());
+		this.try.stage.appendChild(this.try.newPostIt);
+		
+		this.listePuce=HH.create("button");
+	     	this.try.listePuce.innerHTML = "liste";
+		SS.style(this.try.listePuce, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"30px","left" : "130px", "backgroundColor" : "lavender"});
+		Events.on(this.try.listePuce, "click", event => this.try.mvc.controller.addListe());
+		this.try.stage.appendChild(this.try.listePuce);
 		
 	}
 	
@@ -118,10 +131,21 @@ class PostItController extends WidgetController {
 		var c = this.try.mvc.view.couleur.value ;
 		SS.style(this.try.mvc.view.text, {"backgroundColor": c +""});	
 	}
+	
 	changePolice(){
 		var p = this.try.mvc.view.police.value ;
 		SS.style(this.try.mvc.view.text, {"fontFamily" : p + ""});
 	}
+	
+	addPostIt(){
+		let postIt= new postItWidget;
+	}
+	
+	addListe(){
+		
+	}
+	
+	
 	async load() {
 		
 	}
