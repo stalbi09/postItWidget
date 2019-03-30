@@ -52,7 +52,7 @@ class PostItView extends WidgetView {
 		this.try.header.innerHTML = "Post-it";
 		this.text=HH.create("textarea"); 
 		// on utilise value pour ecrire decu ou bien inner.HTML
-		SS.style(this.try.text, {"position": "relative", "width": "200px", "height": "150px", "backgroundColor": "rgba(255, 246, 143, 1)"
+		SS.style(this.try.text, {"position": "fixed", "width": "200px", "height": "150px", "backgroundColor": "rgba(255, 246, 143, 1)"
 , "overflow": "hidden"});
 		//this.try.text.innerHTML="Veuillez saisir votre texte !";
 		this.try.stage.appendChild(this.try.text);
@@ -72,15 +72,15 @@ class PostItView extends WidgetView {
 		this.police.setAttribute("type","text");
 		this.police.setAttribute("name","police");
 		this.police.setAttribute("maxlength","12");
-		this.try.div1.appendChild(this.try.police);
+		this.try.unDiv.appendChild(this.try.police);
 
 	 	
 
-	     this.ajout=HH.create("button");
-	     this.try.ajout.innerHTML = "changer la couleur et la police";
+	    	this.ajout=HH.create("button");
+	     	this.try.ajout.innerHTML = "changer la couleur et la police";
 		SS.style(this.try.ajout, {"userSelect": "none", "cursor": "pointer"});
 		Events.on(this.try.ajout, "click", event => this.try.mvc.controller.ajoutPostIt());
-		this.try.stage.appendChild(this.try.ajout);
+		this.try.unDiv.appendChild(this.try.ajout);
 		
 	}
 	
