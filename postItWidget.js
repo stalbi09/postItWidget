@@ -62,7 +62,7 @@ class PostItView extends WidgetView {
 		this.couleur= HH.create("input");
 		SS.style(this.try.couleur, {"width" : "50%", "height" : "50%"});
 		this.couleur.setAttribute("type","text");
-		this.couleur.setAttribute("maxlength","12");
+		this.couleur.setAttribute("size","8");
 		this.couleur.setAttribute("name","couleur");
 		this.try.stage.appendChild(this.try.couleur);
 
@@ -70,7 +70,7 @@ class PostItView extends WidgetView {
 		SS.style(this.try.police, {"width" : "50%", "height" : "50%"});
 		this.police.setAttribute("type","text");
 		this.police.setAttribute("name","police");
-		this.police.setAttribute("maxlength","12");
+		this.police.setAttribute("size","8");
 		this.try.stage.appendChild(this.try.police);
 		
 		//this.try.stage.appendChild(this.try.unDiv);
@@ -81,7 +81,7 @@ class PostItView extends WidgetView {
 	     	this.try.ajout.innerHTML = "changer la couleur et la police";
 		SS.style(this.try.ajout, {"userSelect": "none", "cursor": "pointer"});
 		Events.on(this.try.ajout, "click", event => this.try.mvc.controller.ajoutPostIt());
-		this.try.unDiv.appendChild(this.try.ajout);
+		this.try.stage.appendChild(this.try.ajout);
 		
 	}
 	
