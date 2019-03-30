@@ -58,22 +58,23 @@ class PostItView extends WidgetView {
 		this.try.stage.appendChild(this.try.text);
 
 
-		//this.unDiv= HH.create("div");
+		//this.div1= HH.create("div");
+		//this.div2= HH.create("div");
 		this.couleur= HH.create("input");
-		SS.style(this.try.couleur, {"width" : "50%", "height" : "50%"});
+		SS.style(this.try.couleur, {"position": "fixed","width" : "50px", "height" : "50px"});
 		this.couleur.setAttribute("type","text");
 		this.couleur.setAttribute("size","8");
 		this.couleur.setAttribute("name","couleur");
 		this.try.stage.appendChild(this.try.couleur);
 
 		this.police= HH.create("input");
-		SS.style(this.try.police, {"width" : "50%", "height" : "50%"});
+		SS.style(this.try.police, {"position": "fixed","width" : "50px", "height" : "50px"});
 		this.police.setAttribute("type","text");
 		this.police.setAttribute("name","police");
 		this.police.setAttribute("size","8");
 		this.try.stage.appendChild(this.try.police);
 		
-		//this.try.stage.appendChild(this.try.unDiv);
+		
 
 	 	
 
