@@ -82,11 +82,17 @@ class PostItView extends WidgetView {
 
 	 	
 
-	    	this.ajout=HH.create("button");
-	     	this.try.ajout.innerHTML = "changer la couleur et la police";
-		SS.style(this.try.ajout, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"65px","left" : "20px"});
-		Events.on(this.try.ajout, "click", event => this.try.mvc.controller.ajoutPostIt());
-		this.try.stage.appendChild(this.try.ajout);
+	    	this.btnColor=HH.create("button");
+	     	this.try.btnColor.innerHTML = "Appliquer";
+		SS.style(this.try.ajout, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"65px","left" : "15px"});
+		Events.on(this.try.ajout, "click", event => this.try.mvc.controller.changeColor());
+		this.try.stage.appendChild(this.try.btnColor);
+		
+		this.btnPolice=HH.create("button");
+	     	this.try.btnPolice.innerHTML = "Appliquer";
+		SS.style(this.try.ajout, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"65px","left" : "170px"});
+		Events.on(this.try.ajout, "click", event => this.try.mvc.controller.changePolice());
+		this.try.stage.appendChild(this.try.btnPolice);
 		
 	}
 	
@@ -108,14 +114,14 @@ class PostItController extends WidgetController {
 		
 	}
 
-	ajoutPostIt() {
+	changeColor() {
 		var c = this.try.mvc.view.couleur.value ;
-		var p = this.try.mvc.view.police.value ;
-		SS.style(this.try.mvc.view.text, {"backgroundColor": c +"", "fontFamily" : p + ""});
-
-		
+		SS.style(this.try.mvc.view.text, {"backgroundColor": c +""});	
 	}
-	
+	changePolice(){
+		var p = this.try.mvc.view.police.value ;
+		SS.style(this.try.mvc.view.text, {"fontFamily" : p + ""});
+	}
 	async load() {
 		
 	}
