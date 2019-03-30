@@ -52,7 +52,7 @@ class PostItView extends WidgetView {
 		this.try.header.innerHTML = "Post-it";
 		this.text=HH.create("textarea"); 
 		// on utilise value pour ecrire decu ou bien inner.HTML
-		SS.style(this.try.text, {"position": "fixed", "width": "250px", "height": "100px", "backgroundColor": "rgba(255, 246, 143, 1)"
+		SS.style(this.try.text, {"position": "absolute","top":"25px","left" : "0px", "width": "250px", "height": "100px", "backgroundColor": "rgba(255, 246, 143, 1)"
 , "overflow": "hidden"});
 		//this.try.text.innerHTML="Veuillez saisir votre texte !";
 		this.try.stage.appendChild(this.try.text);
@@ -61,14 +61,14 @@ class PostItView extends WidgetView {
 		this.div1= HH.create("div");
 		this.div2= HH.create("div");
 		this.couleur= HH.create("input");
-		SS.style(this.try.couleur, {"width" : "50px", "height" : "50px"});
+		SS.style(this.try.couleur, {"position": "absolute","top":"0px","left" : "0px","width" : "100px", "height" : "25px"});
 		this.couleur.setAttribute("type","text");
 		this.couleur.setAttribute("size","8");
 		this.couleur.setAttribute("name","couleur");
 		this.try.div1.appendChild(this.try.couleur);
 
 		this.police= HH.create("input");
-		SS.style(this.try.police, {"width" : "50px", "height" : "50px"});
+		SS.style(this.try.police, {"position": "absolute","top":"0px","left" : "150px","width" : "100px", "height" : "25px"});
 		this.police.setAttribute("type","text");
 		this.police.setAttribute("name","police");
 		this.police.setAttribute("size","8");
