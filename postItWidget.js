@@ -91,7 +91,7 @@ class PostItView extends WidgetView {
 		
 		this.btnPolice=HH.create("button");
 	     	this.try.btnPolice.innerHTML = "Appliquer";
-		SS.style(this.try.btnPolice, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"65px","left" : "90px", "backgroundColor" : "lavender"});
+		SS.style(this.try.btnPolice, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"65px","left" : "110px", "backgroundColor" : "lavender"});
 		Events.on(this.try.btnPolice, "click", event => this.try.mvc.controller.changePolice());
 		this.try.stage.appendChild(this.try.btnPolice);
 		
@@ -103,7 +103,7 @@ class PostItView extends WidgetView {
 		
 		this.listePuce=HH.create("button");
 	     	this.try.listePuce.innerHTML = "liste";
-		SS.style(this.try.listePuce, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"30px","left" : "210px", "backgroundColor" : "lavender"});
+		SS.style(this.try.listePuce, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"30px","left" : "230px", "backgroundColor" : "lavender"});
 		Events.on(this.try.listePuce, "click", event => this.try.mvc.controller.addListe());
 		this.try.stage.appendChild(this.try.listePuce);
 		
