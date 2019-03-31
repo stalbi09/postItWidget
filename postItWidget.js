@@ -11,6 +11,8 @@ class PostItWidget extends Widget {
 		this.sizeX = 2;
 		this.sizeY = 1.5;
 		this.radius = 10;
+		this.color = "khaki";
+		this.textPostIt="";
 		
 	}
 	
@@ -107,6 +109,12 @@ class PostItView extends WidgetView {
 		Events.on(this.try.listePuce, "click", event => this.try.mvc.controller.addListe());
 		this.try.stage.appendChild(this.try.listePuce);
 		
+		this.enregistrer=HH.create("button");
+	        this.try.enregistrer.innerHTML = "enregistrer";
+		SS.style(this.try.enregistrer, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"140px","left" : "220px", "backgroundColor" : "lavender"});
+		Events.on(this.try.enregistrer, "click", event => this.try.mvc.controller.enregistrerText());
+		this.try.stage.appendChild(this.try.enregistrer);
+		
 	}
 	
 	update(title, link) {
@@ -138,8 +146,8 @@ class PostItController extends WidgetController {
 	}
 	
 	addPostIt(){
-		let postIt = new PostItWidget(2, this);
-		document.body.appendChild(postIt);
+		//let postIt = new PostItWidget(2, this);
+		//document.body.appendChild(postIt);
 		//this.try.stage.appendChild(this.try.postIt);
 
 	}
@@ -148,6 +156,11 @@ class PostItController extends WidgetController {
 		
 	}
 	
+	enregistrerText(){
+		this.try.mvc.model.textPostIt= this.try.mvc.view.text.select();
+		console.log(this.try.mvc.model.textPostIt);
+
+	}
 	
 	async load() {
 		
