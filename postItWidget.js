@@ -138,7 +138,9 @@ class PostItController extends WidgetController {
 	}
 	
 	addPostIt(){
-		let postIt= new postItWidget;
+		let postIt = new PostItWidget(2, this);
+		this.try.mvc.view.stage.appendChild(this.try.postIt);
+
 	}
 	
 	addListe(){
