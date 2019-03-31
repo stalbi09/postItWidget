@@ -139,7 +139,7 @@ class PostItController extends WidgetController {
 	
 	addPostIt(){
 		let postIt = new PostItWidget(2, this);
-		this.try.mvc.view.stage.appendChild(this.try.postIt);
+		this.try.stage.appendChild(this.try.postIt);
 
 	}
 	
