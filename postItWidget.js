@@ -11,8 +11,7 @@ class PostItWidget extends Widget {
 		this.sizeX = 2;
 		this.sizeY = 1.5;
 		this.radius = 10;
-		this.color = "khaki";
-		this.textPostIt="";
+		
 		
 	}
 	
@@ -22,18 +21,29 @@ class PostItWidget extends Widget {
 		this.controller.load();
 	}
 	
+	
+	
 }
 
 class PostItModel extends WidgetModel {
 	
 	constructor() {
 		super();
+		
 	}
 	
 	setUp() {
 		super.setUp();
+		this.color = "khaki";
+		this.textPostIt="";
+	}
+	
+	storeText(){
+		this.try.textPostIt=this.try.mvc.controller.textData;
+		console.log(textPostIt);
 		
 	}
+		
 
    
 }
@@ -54,7 +64,7 @@ class PostItView extends WidgetView {
 		this.try.header.innerHTML = "Post-it";
 		this.text=HH.create("textarea"); 
 		// on utilise value pour ecrire decu ou bien inner.HTML
-		SS.style(this.try.text, {"position": "absolute","top":"110px","left" : "5px", "width": "280px", "height": "80px", "backgroundColor": "khaki"
+		SS.style(this.try.text, {"position": "absolute","top":"110px","left" : "5px", "width": "280px", "height": "80px", "backgroundColor": this.try.mvc.model.color + ""
 , "overflow": "hidden"});
 		//this.try.text.innerHTML="Veuillez saisir votre texte !";
 		this.try.stage.appendChild(this.try.text);
@@ -157,8 +167,8 @@ class PostItController extends WidgetController {
 	}
 	
 	enregistrerText(){
-		this.try.mvc.model.textPostIt= this.try.mvc.view.text.select();
-		console.log(this.try.mvc.model.textPostIt);
+		var textData= this.try.mvc.view.text.select();
+		this.try.mvc.model.storeText();
 
 	}
 	
