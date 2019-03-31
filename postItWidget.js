@@ -54,7 +54,7 @@ class PostItView extends WidgetView {
 		this.try.header.innerHTML = "Post-it";
 		this.text=HH.create("textarea"); 
 		// on utilise value pour ecrire decu ou bien inner.HTML
-		SS.style(this.try.text, {"position": "absolute","top":"110px","left" : "5px", "width": "280px", "height": "100px", "backgroundColor": "khaki"
+		SS.style(this.try.text, {"position": "absolute","top":"110px","left" : "5px", "width": "280px", "height": "80px", "backgroundColor": "khaki"
 , "overflow": "hidden"});
 		//this.try.text.innerHTML="Veuillez saisir votre texte !";
 		this.try.stage.appendChild(this.try.text);
@@ -111,7 +111,7 @@ class PostItView extends WidgetView {
 		
 		this.enregistrer=HH.create("button");
 	        this.try.enregistrer.innerHTML = "enregistrer";
-		SS.style(this.try.enregistrer, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"140px","left" : "220px", "backgroundColor" : "lavender"});
+		SS.style(this.try.enregistrer, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"240px","left" : "220px", "backgroundColor" : "lavender"});
 		Events.on(this.try.enregistrer, "click", event => this.try.mvc.controller.enregistrerText());
 		this.try.stage.appendChild(this.try.enregistrer);
 		
