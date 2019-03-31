@@ -40,7 +40,8 @@ class PostItModel extends WidgetModel {
 	
 	storeText(){
 		this.try.textPostIt=this.try.mvc.controller.textData;
-		console.log(textPostIt);
+		var ta= this.try.textPostIt
+		console.log(ta);
 		
 	}
 		
