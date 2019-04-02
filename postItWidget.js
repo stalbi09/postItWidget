@@ -15,6 +15,7 @@ class PostItWidget extends Widget {
 		
 	}
 	
+	
 	async ready() {
 		super.ready();
 		
@@ -36,8 +37,10 @@ class PostItModel extends WidgetModel {
 		super.setUp();
 		this.color = "khaki";
 		this.textPostIt="";
+		this.police="Calibri";
 	}
 	
+
 	storeText(){
 		this.try.textPostIt=this.try.mvc.controller.textData;
 		var ta= this.try.textPostIt;
@@ -65,7 +68,7 @@ class PostItView extends WidgetView {
 		this.try.header.innerHTML = "Post-it";
 		this.text=HH.create("textarea"); 
 		SS.style(this.try.text, {"position": "absolute","top":"110px","left" : "5px", "width": "280px", "height": "80px", "backgroundColor": this.try.mvc.model.color + ""
-, "overflow": "hidden"});
+, "fontFamily" : this.try.mvc.model.police + "","overflow": "hidden"});
 		this.try.stage.appendChild(this.try.text);
 
 
@@ -84,8 +87,7 @@ class PostItView extends WidgetView {
 		this.police.setAttribute("name","police");
 		this.police.setAttribute("size","8");
 		this.try.div2.appendChild(this.try.police);
-		
-		
+
 		this.try.stage.appendChild(this.try.div1);
 		this.try.stage.appendChild(this.try.div2);
 		
