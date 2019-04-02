@@ -157,8 +157,8 @@ class PostItController extends WidgetController {
 	}
 	
 	addPostIt(){
-		this.try.Main.newpostit=new PostItWidget(2,this);
-		document.body.appendChild(this.try.Main.newpostit.view.stage);
+		let newpostit=new PostItWidget(2,this);
+		document.body.appendChild(newpostit.view.stage);
 		//let postIt = new PostItWidget(2, this);
 		//document.body.appendChild(postIt);
 		//this.try.stage.appendChild(this.try.postIt);
