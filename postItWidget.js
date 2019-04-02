@@ -158,18 +158,9 @@ class PostItController extends WidgetController {
 	
 	addPostIt(){
 		var i=2; // pour le id du nouveau widget
-		var l=300;
-		var t=0;
 		let newpostit=new PostItWidget(i,this);
-		newpostit.style.position = "absolute" ;
-   		newpostit.style.left=l + "px" ;
-   		newpostit.style.top=t + "px" ;
 		document.body.appendChild(newpostit.view.stage);
 		i++;
-		
-		l=l+300;
-			
-		t=t+300;
 			
 
 	}
