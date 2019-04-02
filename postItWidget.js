@@ -158,12 +158,22 @@ class PostItController extends WidgetController {
 	
 	addPostIt(){
 		var i=2; // pour le id du nouveau widget
+		var l=300;
+		var t=0;
 		let newpostit=new PostItWidget(i,this);
+		newpostit.style.position = "absolute" ;
+   		newpostit.style.left =l + "px" ;
+   		newpostit.style.top = t + "px" ;
 		document.body.appendChild(newpostit.view.stage);
 		i++;
-		//let postIt = new PostItWidget(2, this);
-		//document.body.appendChild(postIt);
-		//this.try.stage.appendChild(this.try.postIt);
+		if(l<900) l+=300;
+		else{ 
+			l=0;
+		}
+		if(t<600)t+=300;
+		else{
+			t=0;}
+		
 
 	}
 	
