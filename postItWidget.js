@@ -180,8 +180,9 @@ class PostItController extends WidgetController {
 	}
 	
 	enregistrerText(){
-		var textData= this.try.mvc.view.text.select();
-		this.try.mvc.model.storeText();
+		this.try.mvc.model.textPostIt= this.try.mvc.view.text.value();
+		console.log("this.try.mvc.model.textPostIt");
+		
 
 	}
 	
