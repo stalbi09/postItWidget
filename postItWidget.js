@@ -184,7 +184,7 @@ class PostItController extends WidgetController {
 	enregistrerText(){
 		
 		this.try.mvc.model.textPostIt= this.try.mvc.view.textdata;
-		console.log(this.try.mvc.model.textPostIt);
+		alert(this.try.mvc.model.textPostIt);
 		
 
 	}
