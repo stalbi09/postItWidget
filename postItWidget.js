@@ -164,10 +164,13 @@ class PostItController extends WidgetController {
 	}
 	
 	addListe(){
+		this.div3=HH.create("div");
+		this.try.mvc.view.text.appendChild(this.try.divi);
 		this.liste=HH.create("ul"); 
 		//SS.style(this.try.text, {"position": "absolute","top":"110px","left" : "5px", "width": "280px", "height": "80px", "backgroundColor": this.try.mvc.model.color + ""
 //, "overflow": "hidden"});
-		this.try.mvc.view.text.appendChild(this.try.liste);
+		this.try.divi.appendChild(this.try.liste);
+		
 		this.puce=HH.create("li");
 		this.try.puce.innerHTML="*";
 		this.try.liste.appendChild(this.try.puce);
