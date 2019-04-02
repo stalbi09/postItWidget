@@ -42,9 +42,7 @@ class PostItModel extends WidgetModel {
 	
 
 	storeText(){
-		this.try.textPostIt=this.try.mvc.controller.textData;
-		var ta= this.try.textPostIt;
-		console.log(ta);
+		// je sais pas comment utilise store et restore
 		
 	}
 		
@@ -168,13 +166,11 @@ class PostItController extends WidgetController {
 	}
 	
 	addListe(){
+		//  ca ne marche pas encore pq? je sais pas
 		this.div3=HH.create("div");
 		this.try.mvc.view.text.appendChild(this.try.divi);
 		this.liste=HH.create("ul"); 
-		//SS.style(this.try.text, {"position": "absolute","top":"110px","left" : "5px", "width": "280px", "height": "80px", "backgroundColor": this.try.mvc.model.color + ""
-//, "overflow": "hidden"});
 		this.try.divi.appendChild(this.try.liste);
-		
 		this.puce=HH.create("li");
 		this.try.puce.innerHTML="*";
 		this.try.liste.appendChild(this.try.puce);
@@ -182,9 +178,9 @@ class PostItController extends WidgetController {
 	}
 	
 	enregistrerText(){
-		
+		// ca enregistre le text dans le model mais je dois apres lenregitrer dans le navig a partir de model comment?
 		this.try.mvc.model.textPostIt= this.try.mvc.view.text.value;
-		alert(this.try.mvc.model.textPostIt);
+		//alert(this.try.mvc.model.textPostIt);
 		
 
 	}
