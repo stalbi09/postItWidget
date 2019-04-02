@@ -120,7 +120,7 @@ class PostItView extends WidgetView {
 		
 		this.enregistrer=HH.create("button");
 	        this.try.enregistrer.innerHTML = "enregistrer";
-		SS.style(this.try.enregistrer, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"200px","left" : "220px", "backgroundColor" : "lavender"});
+		SS.style(this.try.enregistrer, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"200px","left" : "210px", "backgroundColor" : "lavender"});
 		Events.on(this.try.enregistrer, "click", event => this.try.mvc.controller.enregistrerText());
 		this.try.stage.appendChild(this.try.enregistrer);
 		
