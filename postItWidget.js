@@ -169,6 +169,7 @@ class PostItController extends WidgetController {
 //, "overflow": "hidden"});
 		this.try.mvc.view.text.appendChild(this.try.liste);
 		this.puce=HH.create("li");
+		this.try.puce.innerHTML="*";
 		this.try.liste.appendChild(this.try.puce);
 		
 	}
