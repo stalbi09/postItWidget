@@ -64,10 +64,8 @@ class PostItView extends WidgetView {
 		super.draw();
 		this.try.header.innerHTML = "Post-it";
 		this.text=HH.create("textarea"); 
-		// on utilise value pour ecrire decu ou bien inner.HTML
 		SS.style(this.try.text, {"position": "absolute","top":"110px","left" : "5px", "width": "280px", "height": "80px", "backgroundColor": this.try.mvc.model.color + ""
 , "overflow": "hidden"});
-		//this.try.text.innerHTML="Veuillez saisir votre texte !";
 		this.try.stage.appendChild(this.try.text);
 
 
@@ -166,6 +164,10 @@ class PostItController extends WidgetController {
 	}
 	
 	addListe(){
+		this.liste=HH.create("ul"); 
+		//SS.style(this.try.text, {"position": "absolute","top":"110px","left" : "5px", "width": "280px", "height": "80px", "backgroundColor": this.try.mvc.model.color + ""
+//, "overflow": "hidden"});
+		this.try.mvc.view.stage.appendChild(this.try.liste);
 		
 	}
 	
