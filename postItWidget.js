@@ -166,13 +166,18 @@ class PostItController extends WidgetController {
    		newpostit.style.top = t + "px" ;
 		document.body.appendChild(newpostit.view.stage);
 		i++;
-		if(l<900) l+=300;
+		if(l<900){
+			l+=300;
+			if(t<600)t+=300;
+			else{
+				t=0;}
+		}
 		else{ 
 			l=0;
+			if(t<600)t+=300;
+			else{
+				t=0;}
 		}
-		if(t<600)t+=300;
-		else{
-			t=0;}
 		
 
 	}
