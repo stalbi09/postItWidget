@@ -168,6 +168,8 @@ class PostItController extends WidgetController {
 		//SS.style(this.try.text, {"position": "absolute","top":"110px","left" : "5px", "width": "280px", "height": "80px", "backgroundColor": this.try.mvc.model.color + ""
 //, "overflow": "hidden"});
 		this.try.mvc.view.stage.appendChild(this.try.liste);
+		this.puce=HH.create("li");
+		this.try.liste.appendChild(this.try.puce);
 		
 	}
 	
