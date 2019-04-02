@@ -71,6 +71,7 @@ class PostItView extends WidgetView {
 		SS.style(this.try.text, {"position": "absolute","top":"110px","left" : "5px", "width": "280px", "height": "80px", "backgroundColor": this.try.mvc.model.color + ""
 , "fontFamily" : this.try.mvc.model.police + "","overflow": "hidden"});
 		this.try.stage.appendChild(this.try.text);
+		var textdata=document.getElementById("text").value();
 
 
 		this.div1= HH.create("div");
@@ -181,7 +182,8 @@ class PostItController extends WidgetController {
 	}
 	
 	enregistrerText(){
-		this.try.mvc.model.textPostIt= document.getElementById("text").value();
+		
+		this.try.mvc.model.textPostIt= this.try.mvc.view.textdata;
 		console.log("this.try.mvc.model.textPostIt");
 		
 
