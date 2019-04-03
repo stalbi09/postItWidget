@@ -207,9 +207,9 @@ class PostItController extends WidgetController {
 	}
 	
 	restorePostIt(){
-		this.try.mvc.view.text= this.mvc.model.restoreText() ;
-		this.try.mvc.view.couleur= this.mvc.model.restoreCouleur() ;
-		this.try.mvc.view.police= this.mvc.model.restorePolice() ;
+		this.try.mvc.view.text.value= this.mvc.model.restoreText() ;
+		this.try.mvc.view.couleur.value= this.mvc.model.restoreCouleur() ;
+		this.try.mvc.view.police.value= this.mvc.model.restorePolice() ;
 		
 	}
 	
