@@ -148,7 +148,7 @@ class PostItView extends WidgetView {
 		this.try.stage.appendChild(this.try.enregistrer);
 		
 	}
-	restorePostIt();
+	
 	
 	update(title, link) {
 	}
