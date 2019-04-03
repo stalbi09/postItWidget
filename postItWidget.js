@@ -37,11 +37,15 @@ class PostItModel extends WidgetModel {
 		super.setUp();
 		this.color = "khaki";
 		this.textPostIt="";
-		this.police="Calibri";
+		this.policePostIt="Calibri";
 	}
 	
 
-	storeText(){
+	storeData(){
+		this.try.mvc.main.store(textData,this.textPostIt);
+		this.try.mvc.main.store(colorData,this.color);
+		this.try.mvc.main.store(policeData,this.policePostIt);
+		
 		// je sais pas comment utilise store et restore
 		
 	}
@@ -67,13 +71,14 @@ class PostItView extends WidgetView {
 		this.text=HH.create("textarea");
 		this.text.setAttribute("id","text");
 		SS.style(this.try.text, {"position": "absolute","top":"110px","left" : "5px", "width": "280px", "height": "80px", "backgroundColor": this.try.mvc.model.color + ""
-, "fontFamily" : this.try.mvc.model.police + "","overflow": "hidden"});
+, "fontFamily" : this.try.mvc.model.policePostIt + "","overflow": "hidden"});
 		this.try.stage.appendChild(this.try.text);
 		this.try.text.innerHTML=this.try.mvc.model.textPostIt;
 
 
 		this.div1= HH.create("div");
 		this.div2= HH.create("div");
+		
 		this.couleur= HH.create("input");
 		SS.style(this.try.couleur, {"position": "absolute","top":"30px","left" : "5px","width" : "80px", "height" : "25px", "backgroundColor" : "lavender"});
 		this.couleur.setAttribute("type","text");
@@ -180,6 +185,10 @@ class PostItController extends WidgetController {
 	enregistrerText(){
 		// ca enregistre le text dans le model mais je dois apres lenregitrer dans le navig a partir de model comment?
 		this.try.mvc.model.textPostIt= this.try.mvc.view.text.value;
+		this.try.mvc.model.color= this.try.mvc.view.couleur.value;
+		this.try.mvc.model.policePostIt= this.try.mvc.view.police.value;
+		
+		this.try.mvc.model.storeData();
 		//alert(this.try.mvc.model.textPostIt);
 		
 
