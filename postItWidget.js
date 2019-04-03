@@ -17,7 +17,7 @@ class PostItWidget extends Widget {
 	
 	async ready() {
 		super.ready();
-		
+		// c ici que jappelle la fonction restore
 		this.controller.load();
 	}
 	
@@ -187,13 +187,7 @@ class PostItController extends WidgetController {
 	
 	addListe(){
 		//  ca ne marche pas encore pq? je sais pas
-		this.div3=HH.create("div");
-		this.try.mvc.view.text.appendChild(this.try.divi);
-		this.liste=HH.create("ul"); 
-		this.try.divi.appendChild(this.try.liste);
-		this.puce=HH.create("li");
-		this.try.puce.innerHTML="*";
-		this.try.liste.appendChild(this.try.puce);
+		document.getElementById("text").value += "\n\t  *";
 		
 	}
 	
