@@ -17,7 +17,7 @@ class PostItWidget extends Widget {
 	
 	async ready() {
 		super.ready();
-		restorePostIt();
+		//restorePostIt();
 		// c ici que jappelle la fonction restore
 		this.controller.load();
 	}
@@ -148,6 +148,7 @@ class PostItView extends WidgetView {
 		this.try.stage.appendChild(this.try.enregistrer);
 		
 	}
+	restorePostIt();
 	
 	update(title, link) {
 	}
