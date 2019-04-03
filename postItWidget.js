@@ -42,13 +42,14 @@ class PostItModel extends WidgetModel {
 	
 
 	storeData(){
+		/*
 		this.try.mvc.main.store(textData,this.textPostIt);
 		this.try.mvc.main.store(colorData,this.couleurPostIt);
-		this.try.mvc.main.store(policeData,this.policePostIt);
+		this.try.mvc.main.store(policeData,this.policePostIt); */
 	}
 	
 	restoreData(){
-		
+		/*
 		if(this.try.mvc.main.has(textData)){
 		   	this.try.textPostIt=this.try.mvc.main.restore(textData);
 		}
@@ -60,6 +61,7 @@ class PostItModel extends WidgetModel {
 		if(this.try.mvc.main.has(policeData)){
 			this.try.policePostIt=this.try.mvc.main.restore(policeData);
 		}
+		*/
 	}
 		
 }
@@ -200,14 +202,14 @@ class PostItController extends WidgetController {
 	}
 	
 	enregistrerText(){
-		// ca enregistre le text dans le model mais je dois apres lenregitrer dans le navig a partir de model comment?
+		/* ca enregistre le text dans le model mais je dois apres lenregitrer dans le navig a partir de model comment?
 		this.try.mvc.model.textPostIt= this.try.mvc.view.text.value;
 		this.try.mvc.model.couleurPostIt= this.try.mvc.view.couleur.value;
 		this.try.mvc.model.policePostIt= this.try.mvc.view.police.value;
 		
 		this.try.mvc.model.storeData();
 		//alert(this.try.mvc.model.textPostIt);
-		
+		*/
 
 	}
 	
