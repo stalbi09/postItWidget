@@ -65,10 +65,6 @@ class PostItModel extends WidgetModel {
 	}
 		
 	
-	storeText(){
-		// je sais pas comment utilise store et restore
-		
-	}
 		
 
    
