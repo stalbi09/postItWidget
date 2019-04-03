@@ -17,6 +17,7 @@ class PostItWidget extends Widget {
 	
 	async ready() {
 		super.ready();
+		restorePostIt();
 		// c ici que jappelle la fonction restore
 		this.controller.load();
 	}
