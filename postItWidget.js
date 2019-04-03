@@ -35,7 +35,7 @@ class PostItModel extends WidgetModel {
 	
 	setUp() {
 		super.setUp();
-		this.color = "khaki";
+		this.couleurPostIt = "khaki";
 		this.textPostIt="";
 		this.policePostIt="Calibri";
 	}
@@ -43,12 +43,27 @@ class PostItModel extends WidgetModel {
 
 	storeData(){
 		this.try.mvc.main.store(textData,this.textPostIt);
-		this.try.mvc.main.store(colorData,this.color);
+		this.try.mvc.main.store(colorData,this.couleurPostIt);
 		this.try.mvc.main.store(policeData,this.policePostIt);
-		
-		// je sais pas comment utilise store et restore
-		
 	}
+	
+	restoreData(){
+		
+		if(this.try.mvc.main.has(textData)){
+		   	this.try.textPostIt=this.try.mvc.main.restore(textData);
+		}
+		
+		if(this.try.mvc.main.has(colorData)){
+			this.try.couleurPostIT=this.try.mvc.main.restore(colorData);
+		}
+	
+		if(this.try.mvc.main.has(policeData)){
+			this.try.policePostIt=this.try.mvc.main.restore(policeData);
+		}
+	}
+		
+}
+	
 		
 
    
@@ -67,10 +82,12 @@ class PostItView extends WidgetView {
 
 	draw() {
 		super.draw();
+		
+		
 		this.try.header.innerHTML = "Post-it";
 		this.text=HH.create("textarea");
 		this.text.setAttribute("id","text");
-		SS.style(this.try.text, {"position": "absolute","top":"110px","left" : "5px", "width": "280px", "height": "80px", "backgroundColor": this.try.mvc.model.color + ""
+		SS.style(this.try.text, {"position": "absolute","top":"110px","left" : "5px", "width": "280px", "height": "80px", "backgroundColor": this.try.mvc.model.couleurPostIt + ""
 , "fontFamily" : this.try.mvc.model.policePostIt + "","overflow": "hidden"});
 		this.try.stage.appendChild(this.try.text);
 		this.try.text.innerHTML=this.try.mvc.model.textPostIt;
@@ -185,7 +202,7 @@ class PostItController extends WidgetController {
 	enregistrerText(){
 		// ca enregistre le text dans le model mais je dois apres lenregitrer dans le navig a partir de model comment?
 		this.try.mvc.model.textPostIt= this.try.mvc.view.text.value;
-		this.try.mvc.model.color= this.try.mvc.view.couleur.value;
+		this.try.mvc.model.couleurPostIt= this.try.mvc.view.couleur.value;
 		this.try.mvc.model.policePostIt= this.try.mvc.view.police.value;
 		
 		this.try.mvc.model.storeData();
