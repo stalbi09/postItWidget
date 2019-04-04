@@ -106,7 +106,7 @@ class PostItView extends WidgetView {
 		this.couleur.innerHTML="la couleur";
 		this.option1=HH.create("option");
 		this.option1.innerHTML="blue";
-		this.option2.HH.create("option");
+		this.option2=HH.create("option");
 		this.option2.innerHTML="yellow";
 		this.option3=HH.create("option");
 		this.option3.innerHTML="beige";
