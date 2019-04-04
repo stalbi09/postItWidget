@@ -287,7 +287,7 @@ class PostItController extends WidgetController {
 		this.try.mvc.model.couleurPostIt= this.try.mvc.view.couleurSelect.value;
 		this.try.mvc.model.policePostIt= this.try.mvc.view.policeSelect.value;
 		
-		this.try.mvc.model.storeData();
+		//this.try.mvc.model.storeData();
 		alert(this.try.mvc.model.textPostIt);
 		alert(this.try.mvc.model.couleurPostIt);
 		alert(this.try.mvc.model.policePostIt);
@@ -295,10 +295,10 @@ class PostItController extends WidgetController {
 
 	}
 	
-	async restorePostIt(){
+	restorePostIt(){
 		this.try.mvc.view.text.value= this.mvc.model.restoreText() ;
-		this.try.mvc.view.couleur= this.mvc.model.restoreCouleur() ;
-		this.try.mvc.view.police= this.mvc.model.restorePolice() ;
+		this.try.mvc.view.couleurSelect.value= this.mvc.model.restoreCouleur() ;
+		this.try.mvc.view.policeSelect.value= this.mvc.model.restorePolice() ;
 		
 	}
 	
