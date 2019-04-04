@@ -103,7 +103,7 @@ class PostItView extends WidgetView {
 		this.try.div1.appendChild(this.try.couleur); */
 		
 		this.couleurSelect=HH.create("select");
-		SS.style(this.try.couleurSelect, {"position": "absolute","top":"30px","left" : "5px","width" : "80px", "height" : "25px","backgroundColor" : "mistyrose"});
+		SS.style(this.try.couleurSelect, {"position": "absolute","top":"30px","left" : "5px","width" : "80px", "height" : "25px","backgroundColor" : "lavenderblush"});
 		this.couleur=this.couleurSelect.value ;
 		
 		this.option1=HH.create("option");
@@ -164,7 +164,7 @@ class PostItView extends WidgetView {
 		this.try.div2.appendChild(this.try.police);*/
 		
 		this.policeSelect=HH.create("select");
-		SS.style(this.try.policeSelect, {"position": "absolute","top":"30px","left" : "90px","width" : "80px", "height" : "25px","backgroundColor" : "mistyrose"});
+		SS.style(this.try.policeSelect, {"position": "absolute","top":"30px","left" : "90px","width" : "80px", "height" : "25px","backgroundColor" : "lavenderblush"});
 		this.police=this.policeSelect.value;
 		this.option16=HH.create("option");
 		this.option16.innerHTML="police";
@@ -195,7 +195,7 @@ class PostItView extends WidgetView {
 
 	    	this.btnColorPolice=HH.create("button");
 	     	this.try.btnColorPolice.innerHTML = "Appliquer";
-		SS.style(this.try.btnColorPolice, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"65px","left" : "10px", "backgroundColor" : "mistyrose"});
+		SS.style(this.try.btnColorPolice, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"65px","left" : "10px", "backgroundColor" : "lavenderblush"});
 		Events.on(this.try.btnColorPolice, "click", event => this.try.mvc.controller.changeColorPolice());
 		this.try.stage.appendChild(this.try.btnColorPolice);
 		
@@ -208,25 +208,25 @@ class PostItView extends WidgetView {
 		*/
 		this.newPostIt=HH.create("button");
 	     	this.try.newPostIt.innerHTML = "New";
-		SS.style(this.try.newPostIt, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"30px","left" : "180px", "backgroundColor" : "mistyrose"});
+		SS.style(this.try.newPostIt, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"30px","left" : "180px", "backgroundColor" : "lavenderblush"});
 		Events.on(this.try.newPostIt, "click", event => this.try.mvc.controller.addPostIt());
 		this.try.stage.appendChild(this.try.newPostIt);
 		
 		this.removePostIt=HH.create("button");
 	     	this.try.removePostIt.innerHTML = "supprimer";
-		SS.style(this.try.removePostIt, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"200px","left" : "10px", "backgroundColor" : "mistyrose"});
+		SS.style(this.try.removePostIt, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"200px","left" : "10px", "backgroundColor" : "lavenderblush"});
 		Events.on(this.try.removePostIt, "click", event => this.try.mvc.controller.delatePostIt());
 		this.try.stage.appendChild(this.try.removePostIt);
 		
 		this.listePuce=HH.create("button");
 	     	this.try.listePuce.innerHTML = "liste";
-		SS.style(this.try.listePuce, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"30px","left" : "230px", "backgroundColor" : "mistyrose"});
+		SS.style(this.try.listePuce, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"30px","left" : "230px", "backgroundColor" : "lavenderblush"});
 		Events.on(this.try.listePuce, "click", event => this.try.mvc.controller.addListe());
 		this.try.stage.appendChild(this.try.listePuce);
 		
 		this.enregistrer=HH.create("button");
 	        this.try.enregistrer.innerHTML = "enregistrer";
-		SS.style(this.try.enregistrer, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"200px","left" : "210px", "backgroundColor" : "mistyrose"});
+		SS.style(this.try.enregistrer, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"200px","left" : "210px", "backgroundColor" : "lavenderblush"});
 		Events.on(this.try.enregistrer, "click", event => this.try.mvc.controller.enregistrerPostIt());
 		this.try.stage.appendChild(this.try.enregistrer);
 		
