@@ -286,13 +286,13 @@ class PostItController extends WidgetController {
 		
 		
 		this.try.mvc.model.textPostIt= this.try.mvc.view.text.value;
-		this.try.mvc.model.couleurPostIt= this.try.mvc.view.couleurSelect.value;
-		this.try.mvc.model.policePostIt= this.try.mvc.view.policeSelect.value;
+		this.try.mvc.model.couleurPostIt.value= this.try.mvc.view.couleurSelect.value;
+		this.try.mvc.model.policePostIt.value= this.try.mvc.view.policeSelect.value;
 		
 		//this.try.mvc.model.storeData();
 		alert(this.try.mvc.model.textPostIt);
-		alert(this.try.mvc.model.couleurPostIt);
-		alert(this.try.mvc.model.policePostIt);
+		alert(this.try.mvc.model.couleurPostIt); // couleur
+		alert(this.try.mvc.model.policePostIt); //police
 		
 
 	}
