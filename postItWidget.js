@@ -152,7 +152,7 @@ class PostItView extends WidgetView {
 		this.try.couleur.appendChild(this.try.option12);
 		this.try.couleur.appendChild(this.try.option13);
 		this.try.couleur.appendChild(this.try.option14);
-		this.try.couleur.appendChild(this.try.option15);
+		
 		
 		/*this.police= HH.create("input");
 		SS.style(this.try.police, {"position": "absolute","top":"30px","left" : "90px","width" : "80px", "height" : "25px", "backgroundColor" : "lavender"});
@@ -283,7 +283,7 @@ class PostItController extends WidgetController {
 
 	}
 	
-	restorePostIt(){
+	async restorePostIt(){
 		this.try.mvc.view.text.value= this.mvc.model.restoreText() ;
 		this.try.mvc.view.couleur.value= this.mvc.model.restoreCouleur() ;
 		this.try.mvc.view.police.value= this.mvc.model.restorePolice() ;
