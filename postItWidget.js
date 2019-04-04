@@ -213,9 +213,9 @@ class PostItView extends WidgetView {
 		this.try.stage.appendChild(this.try.newPostIt);
 		
 		this.removePostIt=HH.create("button");
-	     	this.try.newPostIt.innerHTML = "supprimer";
-		SS.style(this.try.enregistrer, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"200px","left" : "10px", "backgroundColor" : "mistyrose"});
-		Events.on(this.try.newPostIt, "click", event => this.try.mvc.controller.delatePostIt());
+	     	this.try.removePostIt.innerHTML = "supprimer";
+		SS.style(this.try.removePostIt, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"200px","left" : "10px", "backgroundColor" : "mistyrose"});
+		Events.on(this.try.removePostIt, "click", event => this.try.mvc.controller.delatePostIt());
 		this.try.stage.appendChild(this.try.removePostIt);
 		
 		this.listePuce=HH.create("button");
