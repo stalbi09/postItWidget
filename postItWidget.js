@@ -192,9 +192,9 @@ class PostItView extends WidgetView {
 	 	
 
 	    	this.btnColorPolice=HH.create("button");
-	     	this.try.btnColor.innerHTML = "Appliquer";
-		SS.style(this.try.btnColor, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"65px","left" : "10px", "backgroundColor" : "mistyrose"});
-		Events.on(this.try.btnColor, "click", event => this.try.mvc.controller.changeColorPolice());
+	     	this.try.btnColorPolice.innerHTML = "Appliquer";
+		SS.style(this.try.btnColorPolice, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"65px","left" : "10px", "backgroundColor" : "mistyrose"});
+		Events.on(this.try.btnColorPolice, "click", event => this.try.mvc.controller.changeColorPolice());
 		this.try.stage.appendChild(this.try.btnColorPolice);
 		
 		/*
