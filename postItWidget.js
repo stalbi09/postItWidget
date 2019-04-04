@@ -136,7 +136,7 @@ class PostItView extends WidgetView {
 		
 		
 		
-		SS.style(this.try.couleur, {"position": "absolute","top":"30px","left" : "5px","width" : "80px", "height" : "25px"});
+		SS.style(this.try.couleur, {"position": "absolute","top":"30px","left" : "5px","width" : "80px", "height" : "25px","backgroundColor" : "mistyrose"});
 		this.try.div1.appendChild(this.try.couleur);
 		this.try.couleur.appendChild(this.try.option1);
 		this.try.couleur.appendChild(this.try.option2);
@@ -162,7 +162,7 @@ class PostItView extends WidgetView {
 		this.try.div2.appendChild(this.try.police);*/
 		
 		this.police=HH.create("select");
-		SS.style(this.try.police, {"position": "absolute","top":"30px","left" : "90px","width" : "80px", "height" : "25px"});
+		SS.style(this.try.police, {"position": "absolute","top":"30px","left" : "90px","width" : "80px", "height" : "25px","backgroundColor" : "mistyrose"});
 		this.police.innerHTML="la couleur";
 		this.option16=HH.create("option");
 		this.option16.innerHTML="Calibri";
@@ -193,7 +193,7 @@ class PostItView extends WidgetView {
 
 	    	this.btnColorPolice=HH.create("button");
 	     	this.try.btnColor.innerHTML = "Appliquer";
-		SS.style(this.try.btnColor, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"65px","left" : "10px", "backgroundColor" : "lavender"});
+		SS.style(this.try.btnColor, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"65px","left" : "10px", "backgroundColor" : "mistyrose"});
 		Events.on(this.try.btnColor, "click", event => this.try.mvc.controller.changeColorPolice());
 		this.try.stage.appendChild(this.try.btnColorPolice);
 		
@@ -206,25 +206,25 @@ class PostItView extends WidgetView {
 		*/
 		this.newPostIt=HH.create("button");
 	     	this.try.newPostIt.innerHTML = "New";
-		SS.style(this.try.newPostIt, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"30px","left" : "180px", "backgroundColor" : "lavender"});
+		SS.style(this.try.newPostIt, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"30px","left" : "180px", "backgroundColor" : "mistyrose"});
 		Events.on(this.try.newPostIt, "click", event => this.try.mvc.controller.addPostIt());
 		this.try.stage.appendChild(this.try.newPostIt);
 		
 		this.removePostIt=HH.create("button");
 	     	this.try.newPostIt.innerHTML = "supprimer";
-		SS.style(this.try.enregistrer, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"200px","left" : "10px", "backgroundColor" : "lavender"});
+		SS.style(this.try.enregistrer, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"200px","left" : "10px", "backgroundColor" : "mistyrose"});
 		Events.on(this.try.newPostIt, "click", event => this.try.mvc.controller.delatePostIt());
 		this.try.stage.appendChild(this.try.removePostIt);
 		
 		this.listePuce=HH.create("button");
 	     	this.try.listePuce.innerHTML = "liste";
-		SS.style(this.try.listePuce, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"30px","left" : "230px", "backgroundColor" : "lavender"});
+		SS.style(this.try.listePuce, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"30px","left" : "230px", "backgroundColor" : "mistyrose"});
 		Events.on(this.try.listePuce, "click", event => this.try.mvc.controller.addListe());
 		this.try.stage.appendChild(this.try.listePuce);
 		
 		this.enregistrer=HH.create("button");
 	        this.try.enregistrer.innerHTML = "enregistrer";
-		SS.style(this.try.enregistrer, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"200px","left" : "210px", "backgroundColor" : "lavender"});
+		SS.style(this.try.enregistrer, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"200px","left" : "210px", "backgroundColor" : "mistyrose"});
 		Events.on(this.try.enregistrer, "click", event => this.try.mvc.controller.enregistrerPostIt());
 		this.try.stage.appendChild(this.try.enregistrer);
 		
