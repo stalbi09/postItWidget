@@ -285,9 +285,9 @@ class PostItController extends WidgetController {
 	enregistrerPostIt(){
 		
 		
-		this.try.mvc.model.textPostIt= this.try.mvc.view.text.value;
-		this.try.mvc.model.couleurPostIt.value= this.try.mvc.view.couleurSelect.value;
-		this.try.mvc.model.policePostIt.value= this.try.mvc.view.policeSelect.value;
+		this.try.mvc.model.textPostIt.value= this.try.mvc.view.text;
+		this.try.mvc.model.couleurPostIt.value= this.try.mvc.view.couleurSelect;
+		this.try.mvc.model.policePostIt.value= this.try.mvc.view.policeSelect;
 		
 		//this.try.mvc.model.storeData();
 		
