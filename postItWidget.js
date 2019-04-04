@@ -95,28 +95,95 @@ class PostItView extends WidgetView {
 
 		this.div1= HH.create("div");
 		this.div2= HH.create("div");
-		this.couleur= HH.create("input");
+		/*this.couleur= HH.create("input");
 		SS.style(this.try.couleur, {"position": "absolute","top":"30px","left" : "5px","width" : "80px", "height" : "25px", "backgroundColor" : "lavender"});
 		this.couleur.setAttribute("type","text");
 		this.couleur.setAttribute("size","8");
 		this.couleur.setAttribute("name","couleur");
+		this.try.div1.appendChild(this.try.couleur); */
+		
+		this.couleur=HH.create("select");
+		this.couleur.innerHTML="la couleur";
+		this.option1=HH.create("option");
+		this.option1.innerHTML="blue";
+		this.option2.HH.create("option");
+		this.option2.innerHTML="yellow";
+		this.option3=HH.create("option");
+		this.option3.innerHTML="beige";
+		this.option4=HH.create("option");
+		this.option4.innerHTML="black";
+		this.option5=HH.create("option");
+		this.option5.innerHTML="white";
+		this.option6=HH.create("option");
+		this.option6.innerHTML="red";
+		this.option7=HH.create("option");
+		this.option7.innerHTML="green";
+		this.option8=HH.create("option");
+		this.option8.innerHTML="fuchsia";
+		this.option9=HH.create("option");
+		this.option9.innerHTML="gold";
+		this.option10=HH.create("option");
+		this.option11.innerHTML="gray";
+		this.option12=HH.create("option");
+		this.option12.innerHTML="pink";
+		this.option13=HH.create("option");
+		this.option13.innerHTML="lightblue";
+		this.option14=HH.create("option");
+		this.option14.innerHTML="lightpink";
+		this.option15=HH.create("option");
+		this.option15.innerHTML="lavender";
+		
+		
+		
+		
+		SS.style(this.try.couleur, {"position": "absolute","top":"30px","left" : "5px","width" : "80px", "height" : "25px"});
 		this.try.div1.appendChild(this.try.couleur);
+		this.try.couleur.appendChild(this.try.option1);
+		this.try.couleur.appendChild(this.try.option2);
+		this.try.couleur.appendChild(this.try.option3);
+		this.try.couleur.appendChild(this.try.option4);
+		this.try.couleur.appendChild(this.try.option5);
+		this.try.couleur.appendChild(this.try.option6);
+		this.try.couleur.appendChild(this.try.option7);
+		this.try.couleur.appendChild(this.try.option8);
+		this.try.couleur.appendChild(this.try.option9);
+		this.try.couleur.appendChild(this.try.option10);
+		this.try.couleur.appendChild(this.try.option11);
+		this.try.couleur.appendChild(this.try.option12);
+		this.try.couleur.appendChild(this.try.option13);
+		this.try.couleur.appendChild(this.try.option14);
+		this.try.couleur.appendChild(this.try.option15);
 		
-		this.selection=HH.create("select");
-		this.selection.innerHTML="la couleur";
-		this.op=HH.create("option");
-		this.op.innerHTML="blue";
-		SS.style(this.try.selection, {"position": "absolute","top":"30px","left" : "5px","width" : "80px", "height" : "25px"});
-		this.try.div1.appendChild(this.try.selection);
-		this.try.selection.appendChild(this.try.op);
-		
-		this.police= HH.create("input");
+		/*this.police= HH.create("input");
 		SS.style(this.try.police, {"position": "absolute","top":"30px","left" : "90px","width" : "80px", "height" : "25px", "backgroundColor" : "lavender"});
 		this.police.setAttribute("type","text");
 		this.police.setAttribute("name","police");
 		this.police.setAttribute("size","8");
+		this.try.div2.appendChild(this.try.police);*/
+		
+		this.police=HH.create("select");
+		SS.style(this.try.police, {"position": "absolute","top":"30px","left" : "90px","width" : "80px", "height" : "25px", "backgroundColor" : "lavender"});
+		this.police.innerHTML="la couleur";
+		this.option16=HH.create("option");
+		this.option16.innerHTML="Calibri";
+		this.option17=HH.create("option");
+		this.option17.innerHTML="Calibri";
+		this.option18=HH.create("option");
+		this.option18.innerHTML="Verdana";
+		this.option19=HH.create("option");
+		this.option19.innerHTML="Arial";
+		this.option20=HH.create("option");
+		this.option20.innerHTML="Cambria";
+		this.option21=HH.create("option");
+		this.option21.innerHTML="Marlett";
 		this.try.div2.appendChild(this.try.police);
-
+		this.try.police.appendChild(this.try.option16);
+		this.try.police.appendChild(this.try.option17);
+		this.try.police.appendChild(this.try.option18);
+		this.try.police.appendChild(this.try.option19);
+		this.try.police.appendChild(this.try.option20);
+		this.try.police.appendChild(this.try.option21);
+		
 		this.try.stage.appendChild(this.try.div1);
 		this.try.stage.appendChild(this.try.div2);
 		
