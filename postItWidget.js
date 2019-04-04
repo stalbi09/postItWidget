@@ -123,15 +123,15 @@ class PostItView extends WidgetView {
 		this.option9=HH.create("option");
 		this.option9.innerHTML="gold";
 		this.option10=HH.create("option");
-		this.option11.innerHTML="gray";
+		this.option10.innerHTML="gray";
+		this.option11=HH.create("option");
+		this.option11.innerHTML="pink";
 		this.option12=HH.create("option");
-		this.option12.innerHTML="pink";
+		this.option12.innerHTML="lightblue";
 		this.option13=HH.create("option");
-		this.option13.innerHTML="lightblue";
+		this.option13.innerHTML="lightpink";
 		this.option14=HH.create("option");
-		this.option14.innerHTML="lightpink";
-		this.option15=HH.create("option");
-		this.option15.innerHTML="lavender";
+		this.option14.innerHTML="lavender";
 		
 		
 		
