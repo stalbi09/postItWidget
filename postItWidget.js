@@ -102,14 +102,16 @@ class PostItView extends WidgetView {
 		this.couleur.setAttribute("name","couleur");
 		this.try.div1.appendChild(this.try.couleur); */
 		
-		this.couleur=HH.create("select");
-		this.couleur.innerHTML="la couleur";
+		this.couleurSelect=HH.create("select");
+		SS.style(this.try.couleur, {"position": "absolute","top":"30px","left" : "5px","width" : "80px", "height" : "25px","backgroundColor" : "mistyrose"});
+		this.couleur=this.couleurSelect.value ;
+		
 		this.option1=HH.create("option");
-		this.option1.innerHTML="yellow";
+		this.option1.innerHTML="couleur";
 		this.option2=HH.create("option");
 		this.option2.innerHTML="blue";
 		this.option3=HH.create("option");
-		this.option3.innerHTML="beige";
+		this.option3.innerHTML="yellow";
 		this.option4=HH.create("option");
 		this.option4.innerHTML="black";
 		this.option5=HH.create("option");
@@ -136,22 +138,22 @@ class PostItView extends WidgetView {
 		
 		
 		
-		SS.style(this.try.couleur, {"position": "absolute","top":"30px","left" : "5px","width" : "80px", "height" : "25px","backgroundColor" : "mistyrose"});
-		this.try.div1.appendChild(this.try.couleur);
-		this.try.couleur.appendChild(this.try.option1);
-		this.try.couleur.appendChild(this.try.option2);
-		this.try.couleur.appendChild(this.try.option3);
-		this.try.couleur.appendChild(this.try.option4);
-		this.try.couleur.appendChild(this.try.option5);
-		this.try.couleur.appendChild(this.try.option6);
-		this.try.couleur.appendChild(this.try.option7);
-		this.try.couleur.appendChild(this.try.option8);
-		this.try.couleur.appendChild(this.try.option9);
-		this.try.couleur.appendChild(this.try.option10);
-		this.try.couleur.appendChild(this.try.option11);
-		this.try.couleur.appendChild(this.try.option12);
-		this.try.couleur.appendChild(this.try.option13);
-		this.try.couleur.appendChild(this.try.option14);
+		
+		this.try.div1.appendChild(this.try.couleurSelect);
+		this.try.couleurSelect.appendChild(this.try.option1);
+		this.try.couleurSelect.appendChild(this.try.option2);
+		this.try.couleurSelect.appendChild(this.try.option3);
+		this.try.couleurSelect.appendChild(this.try.option4);
+		this.try.couleurSelect.appendChild(this.try.option5);
+		this.try.couleurSelect.appendChild(this.try.option6);
+		this.try.couleurSelect.appendChild(this.try.option7);
+		this.try.couleurSelect.appendChild(this.try.option8);
+		this.try.couleurSelect.appendChild(this.try.option9);
+		this.try.couleurSelect.appendChild(this.try.option10);
+		this.try.couleurSelect.appendChild(this.try.option11);
+		this.try.couleurSelect.appendChild(this.try.option12);
+		this.try.couleurSelect.appendChild(this.try.option13);
+		this.try.couleurSelect.appendChild(this.try.option14);
 		
 		
 		/*this.police= HH.create("input");
@@ -161,11 +163,11 @@ class PostItView extends WidgetView {
 		this.police.setAttribute("size","8");
 		this.try.div2.appendChild(this.try.police);*/
 		
-		this.police=HH.create("select");
+		this.policeSelect=HH.create("select");
 		SS.style(this.try.police, {"position": "absolute","top":"30px","left" : "90px","width" : "80px", "height" : "25px","backgroundColor" : "mistyrose"});
-		this.police.innerHTML="la couleur";
+		this.police=this.policeSelect.value;
 		this.option16=HH.create("option");
-		this.option16.innerHTML="Calibri";
+		this.option16.innerHTML="police";
 		this.option17=HH.create("option");
 		this.option17.innerHTML="Calibri";
 		this.option18=HH.create("option");
@@ -176,13 +178,13 @@ class PostItView extends WidgetView {
 		this.option20.innerHTML="Cambria";
 		this.option21=HH.create("option");
 		this.option21.innerHTML="Marlett";
-		this.try.div2.appendChild(this.try.police);
-		this.try.police.appendChild(this.try.option16);
-		this.try.police.appendChild(this.try.option17);
-		this.try.police.appendChild(this.try.option18);
-		this.try.police.appendChild(this.try.option19);
-		this.try.police.appendChild(this.try.option20);
-		this.try.police.appendChild(this.try.option21);
+		this.try.div2.appendChild(this.try.policeSelect);
+		this.try.policeSelect.appendChild(this.try.option16);
+		this.try.policeSelect.appendChild(this.try.option17);
+		this.try.policeSelect.appendChild(this.try.option18);
+		this.try.policeSelect.appendChild(this.try.option19);
+		this.try.policeSelect.appendChild(this.try.option20);
+		this.try.policeSelect.appendChild(this.try.option21);
 		
 		this.try.stage.appendChild(this.try.div1);
 		this.try.stage.appendChild(this.try.div2);
@@ -252,8 +254,8 @@ class PostItController extends WidgetController {
 	changeColorPolice() {
 		var c = this.try.mvc.view.couleur.value ;
 		var p = this.try.mvc.view.police.value ;
-		SS.style(this.try.mvc.view.text, {"fontFamily" : p + ""});
-		SS.style(this.try.mvc.view.text, {"backgroundColor": c +""});	
+		SS.style(this.try.mvc.view.text, {"fontFamily" : p + "","backgroundColor": c +""});
+		//SS.style(this.try.mvc.view.text, {"backgroundColor": c +""});	
 	}
 	/*
 	changePolice(){
@@ -269,7 +271,7 @@ class PostItController extends WidgetController {
 	}
 	
 	delatePostIt(){
-		document.body.removeChild(PostItWidget(id,this);
+		document.body.removeChild(PostItWidget(id,this));
 	}
 	
 	addListe(){
