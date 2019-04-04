@@ -191,24 +191,30 @@ class PostItView extends WidgetView {
 
 	 	
 
-	    	this.btnColor=HH.create("button");
+	    	this.btnColorPolice=HH.create("button");
 	     	this.try.btnColor.innerHTML = "Appliquer";
 		SS.style(this.try.btnColor, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"65px","left" : "10px", "backgroundColor" : "lavender"});
-		Events.on(this.try.btnColor, "click", event => this.try.mvc.controller.changeColor());
-		this.try.stage.appendChild(this.try.btnColor);
+		Events.on(this.try.btnColor, "click", event => this.try.mvc.controller.changeColorPolice());
+		this.try.stage.appendChild(this.try.btnColorPolice);
 		
-		
+		/*
 		this.btnPolice=HH.create("button");
 	     	this.try.btnPolice.innerHTML = "Appliquer";
 		SS.style(this.try.btnPolice, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"65px","left" : "95px", "backgroundColor" : "lavender"});
 		Events.on(this.try.btnPolice, "click", event => this.try.mvc.controller.changePolice());
 		this.try.stage.appendChild(this.try.btnPolice);
-		
+		*/
 		this.newPostIt=HH.create("button");
 	     	this.try.newPostIt.innerHTML = "New";
 		SS.style(this.try.newPostIt, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"30px","left" : "180px", "backgroundColor" : "lavender"});
 		Events.on(this.try.newPostIt, "click", event => this.try.mvc.controller.addPostIt());
 		this.try.stage.appendChild(this.try.newPostIt);
+		
+		this.removePostIt=HH.create("button");
+	     	this.try.newPostIt.innerHTML = "supprimer";
+		SS.style(this.try.enregistrer, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"200px","left" : "10px", "backgroundColor" : "lavender"});
+		Events.on(this.try.newPostIt, "click", event => this.try.mvc.controller.delatePostIt());
+		this.try.stage.appendChild(this.try.removePostIt);
 		
 		this.listePuce=HH.create("button");
 	     	this.try.listePuce.innerHTML = "liste";
@@ -243,23 +249,27 @@ class PostItController extends WidgetController {
 		
 	}
 
-	changeColor() {
+	changeColorPolice() {
 		var c = this.try.mvc.view.couleur.value ;
+		var p = this.try.mvc.view.police.value ;
+		SS.style(this.try.mvc.view.text, {"fontFamily" : p + ""});
 		SS.style(this.try.mvc.view.text, {"backgroundColor": c +""});	
 	}
-	
+	/*
 	changePolice(){
 		var p = this.try.mvc.view.police.value ;
 		SS.style(this.try.mvc.view.text, {"fontFamily" : p + ""});
-	}
+	}*/
 	
 	addPostIt(){
 		var i=2; // pour le id du nouveau widget
 		let newpostit=new PostItWidget(i,this);
 		document.body.appendChild(newpostit.view.stage);
 		i++;
-			
-
+	}
+	
+	delatePostIt(){
+		document.body.removeChild(PostItWidget(id,this);
 	}
 	
 	addListe(){
