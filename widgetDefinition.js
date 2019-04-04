@@ -122,7 +122,7 @@ class Widget extends Try {
 	* @param value: value
 	*/
 	store(field, value) {
-		Store.set(this.try.id + "_" + this.try.name + "_" + field, value);
+		store.set(this.try.id + "_" + this.try.name + "_" + field, value);
 	}
 	
 	/**
@@ -131,7 +131,7 @@ class Widget extends Try {
 	* @return data or null
 	*/
 	restore(field) {
-		return Store.get(this.try.id + "_" + this.try.name + "_" + field);
+		return store.get(this.try.id + "_" + this.try.name + "_" + field);
 	}
 	
 	/**
@@ -140,7 +140,7 @@ class Widget extends Try {
 	* @return true or false
 	*/
 	has(field) {
-		return Store.has(this.try.id + "_" + this.try.name + "_" + field);
+		return store.has(this.try.id + "_" + this.try.name + "_" + field);
 	}
 	
 	/**
