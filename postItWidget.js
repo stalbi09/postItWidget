@@ -35,7 +35,7 @@ class PostItModel extends WidgetModel {
 	
 	setUp() {
 		super.setUp();
-		this.couleurPostIt = "khaki";
+		this.couleurPostIt ="khaki";
 		this.textPostIt="";
 		this.policePostIt="Calibri";
 	}
@@ -290,9 +290,10 @@ class PostItController extends WidgetController {
 		this.try.mvc.model.policePostIt.value= this.try.mvc.view.policeSelect.value;
 		
 		//this.try.mvc.model.storeData();
-		alert(this.try.mvc.model.textPostIt.value);
-		alert(this.try.mvc.model.couleurPostIt.value); // couleur
-		alert(this.try.mvc.model.policePostIt.value); //police
+		
+		alert(this.try.mvc.model.textPostIt);
+		alert(this.try.mvc.model.couleurPostIt); // couleur
+		alert(this.try.mvc.model.policePostIt); //police
 		
 
 	}
