@@ -265,14 +265,14 @@ class PostItController extends WidgetController {
 	
 	addPostIt(){
 		var i=2; // pour le id du nouveau widget
-		let newpostit=new PostItWidget(i,this);
+		var newpostit;
+		newpostit=new PostItWidget(i,this);
 		document.body.appendChild(newpostit.view.stage);
 		i++;
 	}
 	
 	delatePostIt(){
-		let postit= PostItWidget(id,this);
-		document.body.removeChild(postit.view.stage);
+		document.body.removeChild(newpostit.view.stage);
 	}
 	
 	addListe(){
