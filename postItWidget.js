@@ -162,7 +162,7 @@ class PostItView extends WidgetView {
 		this.try.div2.appendChild(this.try.police);*/
 		
 		this.police=HH.create("select");
-		SS.style(this.try.police, {"position": "absolute","top":"30px","left" : "90px","width" : "80px", "height" : "25px", "backgroundColor" : "lavender"});
+		SS.style(this.try.police, {"position": "absolute","top":"30px","left" : "90px","width" : "80px", "height" : "25px"});
 		this.police.innerHTML="la couleur";
 		this.option16=HH.create("option");
 		this.option16.innerHTML="Calibri";
