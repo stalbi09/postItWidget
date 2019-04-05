@@ -283,7 +283,7 @@ class PostItController extends WidgetController {
 	delatePostIt(){
 		let enfant= document.getElementById(PostItWidget.id);
 		let parent= document.getElementById("new");
-		parent.removeChild(newpostit);
+		parent.removeChild(PostItWidget(2,this));
 	}
 	
 	addListe(){
