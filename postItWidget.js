@@ -95,12 +95,6 @@ class PostItView extends WidgetView {
 
 		this.div1= HH.create("div");
 		this.div2= HH.create("div");
-		/*this.couleur= HH.create("input");
-		SS.style(this.try.couleur, {"position": "absolute","top":"30px","left" : "5px","width" : "80px", "height" : "25px", "backgroundColor" : "lavender"});
-		this.couleur.setAttribute("type","text");
-		this.couleur.setAttribute("size","8");
-		this.couleur.setAttribute("name","couleur");
-		this.try.div1.appendChild(this.try.couleur); */
 		
 		this.couleurSelect=HH.create("select");
 		SS.style(this.try.couleurSelect, {"position": "absolute","top":"30px","left" : "5px","width" : "80px", "height" : "25px","backgroundColor" : "lavenderblush"});
@@ -156,12 +150,7 @@ class PostItView extends WidgetView {
 		this.try.couleurSelect.appendChild(this.try.option14);
 		
 		
-		/*this.police= HH.create("input");
-		SS.style(this.try.police, {"position": "absolute","top":"30px","left" : "90px","width" : "80px", "height" : "25px", "backgroundColor" : "lavender"});
-		this.police.setAttribute("type","text");
-		this.police.setAttribute("name","police");
-		this.police.setAttribute("size","8");
-		this.try.div2.appendChild(this.try.police);*/
+		
 		
 		this.policeSelect=HH.create("select");
 		SS.style(this.try.policeSelect, {"position": "absolute","top":"30px","left" : "90px","width" : "80px", "height" : "25px","backgroundColor" : "lavenderblush"});
@@ -198,13 +187,7 @@ class PostItView extends WidgetView {
 		Events.on(this.try.btnColorPolice, "click", event => this.try.mvc.controller.changeColorPolice());
 		this.try.stage.appendChild(this.try.btnColorPolice);
 		
-		/*
-		this.btnPolice=HH.create("button");
-	     	this.try.btnPolice.innerHTML = "Appliquer";
-		SS.style(this.try.btnPolice, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"65px","left" : "95px", "backgroundColor" : "lavender"});
-		Events.on(this.try.btnPolice, "click", event => this.try.mvc.controller.changePolice());
-		this.try.stage.appendChild(this.try.btnPolice);
-		*/
+		
 		this.newPostIt=HH.create("button");
 	     	this.try.newPostIt.innerHTML = "New";
 		SS.style(this.try.newPostIt, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"30px","left" : "180px", "backgroundColor" : "lavenderblush"});
@@ -254,13 +237,8 @@ class PostItController extends WidgetController {
 		var c = this.try.mvc.view.couleurSelect.value ;
 		var p = this.try.mvc.view.policeSelect.value ;
 		SS.style(this.try.mvc.view.text, {"fontFamily" : p + "","backgroundColor": c +""});
-		//SS.style(this.try.mvc.view.text, {"backgroundColor": c +""});	
+			
 	}
-	/*
-	changePolice(){
-		var p = this.try.mvc.view.police.value ;
-		SS.style(this.try.mvc.view.text, {"fontFamily" : p + ""});
-	}*/
 	
 	addPostIt(){
 		var i=2; // pour le id du nouveau widget
@@ -276,7 +254,7 @@ class PostItController extends WidgetController {
 	}
 	
 	addListe(){
-		//  ca ne marche pas encore pq? je sais pas
+		
 		document.getElementById("text").value += "\n\t  *";
 		
 	}
@@ -288,11 +266,11 @@ class PostItController extends WidgetController {
 		this.try.mvc.model.couleurPostIt= this.try.mvc.view.couleurSelect.value;
 		this.try.mvc.model.policePostIt= this.try.mvc.view.policeSelect.value;
 		
-		//this.try.mvc.model.storeData();
+		
 		
 		console.log(this.try.mvc.model.textPostIt);
-		console.log(this.try.mvc.model.couleurPostIt); // couleur
-		console.log(this.try.mvc.model.policePostIt); //police
+		console.log(this.try.mvc.model.couleurPostIt); 
+		console.log(this.try.mvc.model.policePostIt); 
 		
 
 	}
