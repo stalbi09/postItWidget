@@ -86,6 +86,7 @@ class PostItView extends WidgetView {
 		super.draw();
 		this.try.header.innerHTML = "Post-it";
 		this.text=HH.create("textarea");
+		this.text.value=this.try.mvc.model.textPostIt;
 		this.text.setAttribute("id","text");
 		SS.style(this.try.text, {"position": "absolute","top":"110px","left" : "5px", "width": "280px", "height": "80px", "backgroundColor": this.try.mvc.model.couleurPostIt + ""
 , "fontFamily" : this.try.mvc.model.policePostIt + "","overflow": "hidden"});
@@ -95,6 +96,7 @@ class PostItView extends WidgetView {
 
 		this.div1= HH.create("div");
 		this.div2= HH.create("div");
+		
 		
 		this.couleurSelect=HH.create("select");
 		SS.style(this.try.couleurSelect, {"position": "absolute","top":"30px","left" : "5px","width" : "80px", "height" : "25px","backgroundColor" : "lavenderblush"});
@@ -128,7 +130,7 @@ class PostItView extends WidgetView {
 		this.option13.innerHTML="lightpink";
 		this.option14=HH.create("option");
 		this.option14.innerHTML="lavender";
-		
+		this.couleurSelect.value=this.try.mvc.model.couleurPostIt ;
 		
 		
 		
@@ -173,6 +175,7 @@ class PostItView extends WidgetView {
 		this.try.policeSelect.appendChild(this.try.option19);
 		this.try.policeSelect.appendChild(this.try.option20);
 		this.try.policeSelect.appendChild(this.try.option21);
+		this.policeSelect.value=this.try.mvc.model.policePostIt;
 		
 		this.try.stage.appendChild(this.try.div1);
 		this.try.stage.appendChild(this.try.div2);
