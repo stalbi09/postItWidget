@@ -17,7 +17,7 @@ class PostItWidget extends Widget {
 	
 	async ready() {
 		super.ready();
-		this.controller.restorePostIt();
+		//this.controller.restorePostIt();
 		// c ici que jappelle la fonction restore
 		this.controller.load();
 	}
@@ -39,7 +39,7 @@ class PostItModel extends WidgetModel {
 		this.textPostIt="";
 		this.policePostIt="Calibri";
 	}
-	
+	/*
        storeData(){
 		
 		this.try.mvc.main.store("textData",this.textPostIt);
@@ -64,7 +64,7 @@ class PostItModel extends WidgetModel {
 			return this.try.mvc.main.restore("policeData");
 		}
 	}
-		
+	*/	
 	
 		
 
@@ -304,10 +304,11 @@ class PostItController extends WidgetController {
 	}
 	
 	restorePostIt(){
+		/*
 		this.try.mvc.view.text.value= this.mvc.model.restoreText() ;
 		this.try.mvc.view.couleurSelect= this.mvc.model.restoreCouleur() ;
 		this.try.mvc.view.policeSelect= this.mvc.model.restorePolice() ;
-		
+		*/
 	}
 	
 	
