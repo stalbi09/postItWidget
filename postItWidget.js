@@ -283,7 +283,8 @@ class PostItController extends WidgetController {
 	
 	addListe(){
 		//  ca ne marche pas encore pq? je sais pas
-		document.getElementById("text").value += "\n\t  *";
+		//document.getElementById("text").value += "\n\t  *";
+		this.try.mvc.view.text.value += "\n\t  *";
 		
 	}
 	
