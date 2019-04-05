@@ -271,15 +271,19 @@ class PostItController extends WidgetController {
 	
 	addPostIt(){
 		var i=2; // pour le id du nouveau widget
+		this.divi=HH.create("div");
+		this.divi.setAttribute("id","new");
+		document.body.appendChild(this.try.divi);
 		var newpostit;
 		newpostit=new PostItWidget(i,this);
-		document.body.appendChild(newpostit.view.stage);
+		this.try.divi.appendChild(newpostit.view.stage);
 		i++;
 	}
 	
 	delatePostIt(){
-		let d= document.getElementById("2");
-		document.body.removeChild(d);
+		let enfant= document.getElementById("2");
+		let parent= document.getElementById("new");
+		parent.removeChild(enfant);
 	}
 	
 	addListe(){
