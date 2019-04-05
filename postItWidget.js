@@ -86,7 +86,6 @@ class PostItView extends WidgetView {
 		super.draw();
 		this.try.header.innerHTML = "Post-it";
 		this.text=HH.create("textarea");
-		this.text.value=this.try.mvc.model.textPostIt;
 		this.text.setAttribute("id","text");
 		SS.style(this.try.text, {"position": "absolute","top":"110px","left" : "5px", "width": "280px", "height": "80px", "backgroundColor": this.try.mvc.model.couleurPostIt + ""
 , "fontFamily" : this.try.mvc.model.policePostIt + "","overflow": "hidden"});
@@ -96,7 +95,12 @@ class PostItView extends WidgetView {
 
 		this.div1= HH.create("div");
 		this.div2= HH.create("div");
-		
+		/*this.couleur= HH.create("input");
+		SS.style(this.try.couleur, {"position": "absolute","top":"30px","left" : "5px","width" : "80px", "height" : "25px", "backgroundColor" : "lavender"});
+		this.couleur.setAttribute("type","text");
+		this.couleur.setAttribute("size","8");
+		this.couleur.setAttribute("name","couleur");
+		this.try.div1.appendChild(this.try.couleur); */
 		
 		this.couleurSelect=HH.create("select");
 		SS.style(this.try.couleurSelect, {"position": "absolute","top":"30px","left" : "5px","width" : "80px", "height" : "25px","backgroundColor" : "lavenderblush"});
@@ -130,7 +134,7 @@ class PostItView extends WidgetView {
 		this.option13.innerHTML="lightpink";
 		this.option14=HH.create("option");
 		this.option14.innerHTML="lavender";
-		this.couleurSelect.value=this.try.mvc.model.couleurPostIt ;
+		
 		
 		
 		
@@ -152,7 +156,12 @@ class PostItView extends WidgetView {
 		this.try.couleurSelect.appendChild(this.try.option14);
 		
 		
-		
+		/*this.police= HH.create("input");
+		SS.style(this.try.police, {"position": "absolute","top":"30px","left" : "90px","width" : "80px", "height" : "25px", "backgroundColor" : "lavender"});
+		this.police.setAttribute("type","text");
+		this.police.setAttribute("name","police");
+		this.police.setAttribute("size","8");
+		this.try.div2.appendChild(this.try.police);*/
 		
 		this.policeSelect=HH.create("select");
 		SS.style(this.try.policeSelect, {"position": "absolute","top":"30px","left" : "90px","width" : "80px", "height" : "25px","backgroundColor" : "lavenderblush"});
@@ -175,7 +184,6 @@ class PostItView extends WidgetView {
 		this.try.policeSelect.appendChild(this.try.option19);
 		this.try.policeSelect.appendChild(this.try.option20);
 		this.try.policeSelect.appendChild(this.try.option21);
-		this.policeSelect.value=this.try.mvc.model.policePostIt;
 		
 		this.try.stage.appendChild(this.try.div1);
 		this.try.stage.appendChild(this.try.div2);
@@ -190,7 +198,13 @@ class PostItView extends WidgetView {
 		Events.on(this.try.btnColorPolice, "click", event => this.try.mvc.controller.changeColorPolice());
 		this.try.stage.appendChild(this.try.btnColorPolice);
 		
-		
+		/*
+		this.btnPolice=HH.create("button");
+	     	this.try.btnPolice.innerHTML = "Appliquer";
+		SS.style(this.try.btnPolice, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"65px","left" : "95px", "backgroundColor" : "lavender"});
+		Events.on(this.try.btnPolice, "click", event => this.try.mvc.controller.changePolice());
+		this.try.stage.appendChild(this.try.btnPolice);
+		*/
 		this.newPostIt=HH.create("button");
 	     	this.try.newPostIt.innerHTML = "New";
 		SS.style(this.try.newPostIt, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"30px","left" : "180px", "backgroundColor" : "lavenderblush"});
@@ -238,10 +252,15 @@ class PostItController extends WidgetController {
 
 	changeColorPolice() {
 		var c = this.try.mvc.view.couleurSelect.value ;
-		var p = this.try.mvc.view.policeSelect.value;
+		var p = this.try.mvc.view.policeSelect.value ;
 		SS.style(this.try.mvc.view.text, {"fontFamily" : p + "","backgroundColor": c +""});
-			
+		//SS.style(this.try.mvc.view.text, {"backgroundColor": c +""});	
 	}
+	/*
+	changePolice(){
+		var p = this.try.mvc.view.police.value ;
+		SS.style(this.try.mvc.view.text, {"fontFamily" : p + ""});
+	}*/
 	
 	addPostIt(){
 		var i=2; // pour le id du nouveau widget
@@ -257,7 +276,7 @@ class PostItController extends WidgetController {
 	}
 	
 	addListe(){
-		
+		//  ca ne marche pas encore pq? je sais pas
 		document.getElementById("text").value += "\n\t  *";
 		
 	}
@@ -269,11 +288,11 @@ class PostItController extends WidgetController {
 		this.try.mvc.model.couleurPostIt= this.try.mvc.view.couleurSelect.value;
 		this.try.mvc.model.policePostIt= this.try.mvc.view.policeSelect.value;
 		
-		
+		//this.try.mvc.model.storeData();
 		
 		console.log(this.try.mvc.model.textPostIt);
-		console.log(this.try.mvc.model.couleurPostIt); 
-		console.log(this.try.mvc.model.policePostIt); 
+		console.log(this.try.mvc.model.couleurPostIt); // couleur
+		console.log(this.try.mvc.model.policePostIt); //police
 		
 
 	}
