@@ -278,7 +278,7 @@ class PostItController extends WidgetController {
 	}
 	
 	delatePostIt(){
-		let d=document.getElementById(id+"");
+		let d= PostItWidget(2,this);
 		document.body.removeChild(d);
 	}
 	
