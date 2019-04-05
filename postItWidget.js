@@ -278,8 +278,8 @@ class PostItController extends WidgetController {
 	}
 	
 	delatePostIt(){
-
-		document.body.removeChild(newpostit.view.stage);
+		let d=document.getElementById(id+"");
+		document.body.removeChild(d);
 	}
 	
 	addListe(){
