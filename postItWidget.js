@@ -255,7 +255,7 @@ class PostItController extends WidgetController {
 
 	changeColorPolice() {
 		console.log(this.try.mvc.view.couleurSelect);
-		consolr.log(this.try.mvc.view.policeSelect);
+		console.log(this.try.mvc.view.policeSelect);
 		var c =this.try.mvc.view.couleurSelect;
 		var p =this.try.mvc.view.policeSelect;
 		SS.style(this.try.mvc.view.text, {"fontFamily" : p + "","backgroundColor": c +""});
@@ -293,7 +293,7 @@ class PostItController extends WidgetController {
 		this.try.mvc.model.couleurPostIt= this.try.mvc.view.couleurSelect.value;
 		this.try.mvc.model.policePostIt= this.try.mvc.view.policeSelect.value;
 		
-		//this.try.mvc.model.storeData();
+		this.try.mvc.model.storeData();
 		
 		console.log(this.try.mvc.model.textPostIt);
 		console.log(this.try.mvc.model.couleurPostIt); // couleur
