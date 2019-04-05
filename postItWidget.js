@@ -103,8 +103,9 @@ class PostItView extends WidgetView {
 		this.try.div1.appendChild(this.try.couleur); */
 		
 		this.couleurSelect=HH.create("select");
+		this.couleurSelect.setAttribute("id","couleur");
 		SS.style(this.try.couleurSelect, {"position": "absolute","top":"30px","left" : "5px","width" : "80px", "height" : "25px","backgroundColor" : "lavenderblush"});
-		
+		this.couleur=document.getElementById("couleur").value;
 		
 		this.option1=HH.create("option");
 		this.option1.innerHTML="khaki";
@@ -164,6 +165,8 @@ class PostItView extends WidgetView {
 		this.try.div2.appendChild(this.try.police);*/
 		
 		this.policeSelect=HH.create("select");
+		this.policeSelect.setAttribute("id","police");
+		this.police=document.getElementById("police").value;
 		SS.style(this.try.policeSelect, {"position": "absolute","top":"30px","left" : "90px","width" : "80px", "height" : "25px","backgroundColor" : "lavenderblush"});
 		this.option16=HH.create("option");
 		this.option16.innerHTML="Calibri";
@@ -251,8 +254,8 @@ class PostItController extends WidgetController {
 	}
 
 	changeColorPolice() {
-		var c = this.try.mvc.view.couleurSelect.value ;
-		var p = this.try.mvc.view.policeSelect.value ;
+		var c =this.try.mvc.view.couleur;
+		var p =this.try.mvc.view.police;
 		SS.style(this.try.mvc.view.text, {"fontFamily" : p + "","backgroundColor": c +""});
 		//SS.style(this.try.mvc.view.text, {"backgroundColor": c +""});	
 	}
