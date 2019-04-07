@@ -35,10 +35,18 @@ class PostItModel extends WidgetModel {
 	
 	setUp() {
 		super.setUp();
-	
-		this.couleurPostIt ="khaki";
-		this.textPostIt="";
-		this.policePostIt="Calibri";
+		if(!this.try.mvc.main.has("textData")){
+			this.textPostIt="";
+		}
+		if(!this.try.mvc.main.has("colorData")){
+			this.couleurPostIt ="khaki";
+		}
+		if(!this.try.mvc.main.has("policeData")){
+			this.policePostIt="Calibri";
+		}
+		
+		
+		
 	}
 	
        storeData(){
