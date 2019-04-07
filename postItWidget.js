@@ -17,7 +17,7 @@ class PostItWidget extends Widget {
 	
 	async ready() {
 		super.ready();
-		//this.controller.restorePostIt();
+		this.controller.restorePostIt();
 		// c ici que jappelle la fonction restore
 		this.controller.load();
 	}
@@ -40,7 +40,7 @@ class PostItModel extends WidgetModel {
 		this.couleurPostIt ="khaki";
 		this.policePostIt="Calibri";
 		this.controller.restorePostIt();
-		/*
+		
 		if(!(this.try.mvc.main.has("textData"))){
 			this.textPostIt="";
 		}
@@ -51,7 +51,7 @@ class PostItModel extends WidgetModel {
 			this.policePostIt="Calibri";
 		}
 		
-		*/
+		
 		
 	}
 	
