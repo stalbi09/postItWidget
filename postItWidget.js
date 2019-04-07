@@ -40,7 +40,7 @@ class PostItModel extends WidgetModel {
 		this.textPostIt="";
 		this.policePostIt="Calibri";
 	}
-	/*
+	
        storeData(){
 		
 		this.try.mvc.main.store("textData",this.textPostIt);
@@ -65,7 +65,7 @@ class PostItModel extends WidgetModel {
 			return this.try.mvc.main.restore("policeData");
 		}
 	}
-	*/	
+		
 	
 		
 
@@ -104,10 +104,8 @@ class PostItView extends WidgetView {
 		this.try.div1.appendChild(this.try.couleur); */
 		
 		this.couleurSelect=HH.create("select");
-		//this.couleur=this.couleurSelect.value;
-		//this.couleurSelect.setAttribute("id","couleur");
 		SS.style(this.try.couleurSelect, {"position": "absolute","top":"30px","left" : "5px","width" : "80px", "height" : "25px","backgroundColor" : "lavenderblush"});
-		//this.couleur=document.getElementById("couleur").value;
+		
 		
 		this.option1=HH.create("option");
 		this.option1.innerHTML="khaki";
@@ -159,17 +157,8 @@ class PostItView extends WidgetView {
 		this.try.couleurSelect.appendChild(this.try.option14);
 		
 		
-		/*this.police= HH.create("input");
-		SS.style(this.try.police, {"position": "absolute","top":"30px","left" : "90px","width" : "80px", "height" : "25px", "backgroundColor" : "lavender"});
-		this.police.setAttribute("type","text");
-		this.police.setAttribute("name","police");
-		this.police.setAttribute("size","8");
-		this.try.div2.appendChild(this.try.police);*/
-		
 		this.policeSelect=HH.create("select");
-		//this.police=this.policeSelect.value;
-		//this.policeSelect.setAttribute("id","police");
-		//this.police=document.getElementById("police").value;
+	
 		SS.style(this.try.policeSelect, {"position": "absolute","top":"30px","left" : "90px","width" : "80px", "height" : "25px","backgroundColor" : "lavenderblush"});
 		this.option16=HH.create("option");
 		this.option16.innerHTML="Calibri";
@@ -204,13 +193,6 @@ class PostItView extends WidgetView {
 		Events.on(this.try.btnColorPolice, "click", event => this.try.mvc.controller.changeColorPolice());
 		this.try.stage.appendChild(this.try.btnColorPolice);
 		
-		/*
-		this.btnPolice=HH.create("button");
-	     	this.try.btnPolice.innerHTML = "Appliquer";
-		SS.style(this.try.btnPolice, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"65px","left" : "95px", "backgroundColor" : "lavender"});
-		Events.on(this.try.btnPolice, "click", event => this.try.mvc.controller.changePolice());
-		this.try.stage.appendChild(this.try.btnPolice);
-		*/
 		this.newPostIt=HH.create("button");
 	     	this.try.newPostIt.innerHTML = "New";
 		SS.style(this.try.newPostIt, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"30px","left" : "180px", "backgroundColor" : "lavenderblush"});
@@ -261,13 +243,8 @@ class PostItController extends WidgetController {
 		var c = this.try.mvc.view.couleurSelect.value ;
 		var p = this.try.mvc.view.policeSelect.value ;
 		SS.style(this.try.mvc.view.text, {"fontFamily" : p + "","backgroundColor": c +""});
-//SS.style(this.try.mvc.view.text, {"backgroundColor": c +""});	
+	
 	}
-	/*
-	changePolice(){
-		var p = this.try.mvc.view.police.value ;
-		SS.style(this.try.mvc.view.text, {"fontFamily" : p + ""});
-	}*/
 	
 	addPostIt(){
 		var i=2; // pour le id du nouveau widget
@@ -287,8 +264,7 @@ class PostItController extends WidgetController {
 	}
 	
 	addListe(){
-		//  ca ne marche pas encore pq? je sais pas
-		//document.getElementById("text").value += "\n\t  *";
+	
 		this.try.mvc.view.text.value += "\n\t  *";
 		
 	}
@@ -310,11 +286,11 @@ class PostItController extends WidgetController {
 	}
 	
 	restorePostIt(){
-		/*
+		
 		this.try.mvc.view.text.value= this.mvc.model.restoreText() ;
 		this.try.mvc.view.couleurSelect= this.mvc.model.restoreCouleur() ;
 		this.try.mvc.view.policeSelect= this.mvc.model.restorePolice() ;
-		*/
+		
 	}
 	
 	
