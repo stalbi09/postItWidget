@@ -17,7 +17,7 @@ class PostItWidget extends Widget {
 	
 	async ready() {
 		super.ready();
-		//this.controller.restorePostIt();
+		this.controller.restorePostIt();
 		// c ici que jappelle la fonction restore
 		this.controller.load();
 	}
@@ -288,8 +288,8 @@ class PostItController extends WidgetController {
 	restorePostIt(){
 		
 		this.try.mvc.view.text.value= this.mvc.model.restoreText() ;
-		this.try.mvc.view.couleurSelect= this.mvc.model.restoreCouleur() ;
-		this.try.mvc.view.policeSelect= this.mvc.model.restorePolice() ;
+		this.try.mvc.view.couleurSelect.value= this.mvc.model.restoreCouleur() ;
+		this.try.mvc.view.policeSelect.value= this.mvc.model.restorePolice() ;
 		
 	}
 	
