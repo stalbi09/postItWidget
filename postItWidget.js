@@ -40,7 +40,7 @@ class PostItModel extends WidgetModel {
 		this.couleurPostIt ="khaki";
 		this.policePostIt="Calibri";
 		this.controller.restorePostIt();
-		
+		/*
 		if(!(this.try.mvc.main.has("textData"))){
 			this.textPostIt="";
 		}
@@ -50,7 +50,7 @@ class PostItModel extends WidgetModel {
 		if(!(this.try.mvc.main.has("policeData"))){
 			this.policePostIt="Calibri";
 		}
-		
+		*/
 		
 		
 	}
