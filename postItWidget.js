@@ -82,13 +82,13 @@ class PostItModel extends WidgetModel {
 	}
 		
 	
-	
+	datawidget(){
 		this.textPostIt="";	
 		var cd=this.try.restoreCouleur() + "";
 		this.couleurPostIt ="khaki";
 		console.log(cd);
 		this.policePostIt="Calibri";
-			
+	}		
 
    
 }
