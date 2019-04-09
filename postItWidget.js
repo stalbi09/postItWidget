@@ -35,9 +35,13 @@ class PostItModel extends WidgetModel {
 	setUp() {
 		super.setUp();
 		
-		this.textPostIt=(this.try.mvc.main.has("textData"))? this.try.mvc.main.restore("textData") : "";
-		this.couleurPostIt =(this.try.mvc.main.has("textData"))? this.try.mvc.main.restore("colorData") : "khaki";
-		this.policePostIt=(this.try.mvc.main.has("textData"))? this.try.mvc.main.restore("policeData") : "Calibri";
+		var t1=(this.try.mvc.main.has("textData"))? this.try.mvc.main.restore("textData") : "";
+		this.textPostIt=t1;
+		console.log(t1);
+		var t2=(this.try.mvc.main.has("textData"))? this.try.mvc.main.restore("colorData") : "khaki";
+		this.couleurPostIt =t2;
+		var t3=(this.try.mvc.main.has("textData"))? this.try.mvc.main.restore("policeData") : "Calibri";
+		this.policePostIt=t3;
 		
 		/*
 		if(!(this.try.mvc.main.has("textData"))){
