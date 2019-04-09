@@ -36,14 +36,13 @@ class PostItModel extends WidgetModel {
 	setUp() {
 		super.setUp();
 		
-		/* ca prend la khaki par defaut sinon colordata 
+		
+		
 		
 		this.textPostIt="";
-		
-		var cd=this.try.restoreCouleur() + "";
 		this.couleurPostIt ="khaki";
-		console.log(cd);
-		this.policePostIt="Calibri";*/
+		
+		this.policePostIt="Calibri";
 		
 
 	}
@@ -82,13 +81,7 @@ class PostItModel extends WidgetModel {
 	}
 		
 	
-	datawidget(){
-		this.textPostIt="";	
-		var cd=this.try.restoreCouleur() + "";
-		this.couleurPostIt ="khaki";
-		console.log(cd);
-		this.policePostIt="Calibri";
-	}		
+	
 
    
 }
