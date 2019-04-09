@@ -54,6 +54,8 @@ class PostItModel extends WidgetModel {
 		this.try.mvc.main.store("textData",this.textPostIt);
 		this.try.mvc.main.store("colorData",this.couleurPostIt);
 		this.try.mvc.main.store("policeData",this.policePostIt); 
+	       console.log("ici");
+	       console.log(this.couleurPostIt);
 	       	
 	}
 	
