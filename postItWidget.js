@@ -41,8 +41,8 @@ class PostItModel extends WidgetModel {
 		this.policePostIt="Calibri";
 		*/
 		
-		this.try.textPostIt="";;
-		this.try.couleurPostIt="khaki";
+		this.try.textPostIt="";
+		this.try.couleurPostIt="yellow";
 		this.try.policePostIt="Calibri" ;
 		
 		
