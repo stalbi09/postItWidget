@@ -270,6 +270,10 @@ class PostItController extends WidgetController {
 		this.try.mvc.main.destroy("textData");
 		this.try.mvc.main.destroy("colorData");
 		this.try.mvc.main.destroy("policeData");
+		
+		this.try.mvc.view.text="";
+		this.try.mvc.view.couleurSelect="kakhi";
+		this.try.mvc.view.policeSelect="Calibri";
 	}
 	
 	addListe(){
