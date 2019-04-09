@@ -35,11 +35,11 @@ class PostItModel extends WidgetModel {
 	setUp() {
 		super.setUp();
 		
-		this.textPostIt;
+		this.textPostIt="";
 		
-		this.couleurPostIt;
+		this.couleurPostIt="kakhi";
 		
-		this.policePostIt;
+		this.policePostIt="Calibri";
 		
 		console.log(this.try.couleurPostIt);
 		/*
