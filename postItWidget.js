@@ -35,11 +35,11 @@ class PostItModel extends WidgetModel {
 	setUp() {
 		super.setUp();
 		
-		this.textPostIt=restoreText();
+		this.textPostIt=""
 		
-		this.couleurPostIt =restoreCouleur();
+		this.couleurPostIt="";
 		
-		this.policePostIt=restorePolice();
+		this.policePostIt="";
 		
 		/*
 		if(!(this.try.mvc.main.has("textData"))){
