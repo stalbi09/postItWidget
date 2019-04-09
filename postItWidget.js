@@ -43,7 +43,7 @@ class PostItModel extends WidgetModel {
 		
 		
 		this.try.textPostIt="";
-		this.try.couleurPostIt=restoreCouleur();
+		this.try.couleurPostIt=NULL;
 		this.try.policePostIt=restorePolice();
 		
 		
