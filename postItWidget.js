@@ -43,8 +43,7 @@ class PostItModel extends WidgetModel {
 		
 		
 		
-		console.log=this.try.mvc.main.restore("colorData");
-		console.log=this.try.mvc.main.restore("policeData");
+		
 		
 		
 		
@@ -68,9 +67,9 @@ class PostItModel extends WidgetModel {
 	restoreCouleur(){
 		var couleurDefault="khaki";
 		if(this.try.mvc.main.has("colorData")){
-			return this.try.mvc.main.restore("colorData");
+			if(this.try.mvc.main.restore("colorData")!=="null") return this.try.mvc.main.restore;
+			else return couleurDefault;
 		}
-		else return couleurDefault;
 	}
 	
 	restorePolice(){
