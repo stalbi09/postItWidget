@@ -17,6 +17,10 @@ class PostItWidget extends Widget {
 	
 	async ready() {
 		super.ready();
+		this.try.mvc.main.store("textData","");
+		this.try.mvc.main.store("colorData","kakhi");
+		this.try.mvc.main.store("policeData","Calibri");
+		
 		this.controller.restorePostIt();
 		this.controller.load();
 	}
@@ -35,9 +39,9 @@ class PostItModel extends WidgetModel {
 	setUp() {
 		super.setUp();
 		
-		this.textPostIt="";
-		this.couleurPostIt="khaki";
-		this.policePostIt="Calibri";
+		this.textPostIt=this.try.mvc.main.restore("textData");
+		this.couleurPostIt=this.try.mvc.main.restore("colorData");
+		this.policePostIt=this.try.mvc.main.restore("policeData");
 		
 		/*
 		if(!(this.try.mvc.main.has("textData"))){
@@ -100,7 +104,15 @@ class PostItView extends WidgetView {
 		super.draw();
 		this.try.header.innerHTML = "Post-it";
 		
+		this.text=HH.create("textarea");
+		this.text.setAttribute("id","text");
 		
+		SS.style(this.try.text, {"position": "absolute","top":"110px","left" : "5px", "width": "280px", "height": "80px", "backgroundColor": this.try.mvc.model.couleurPostIt + ""
+, "fontFamily" : this.try.mvc.model.policePostIt + "","overflow": "hidden"});
+		
+		
+		this.try.stage.appendChild(this.try.text);
+		this.try.text.innerHTML=this.try.mvc.model.textPostIt;
 
 
 		this.div1= HH.create("div");
@@ -190,16 +202,7 @@ class PostItView extends WidgetView {
 		this.try.stage.appendChild(this.try.div2);
 		
 		
-		this.text=HH.create("textarea");
-		this.text.setAttribute("id","text");
-		/*
-		SS.style(this.try.text, {"position": "absolute","top":"110px","left" : "5px", "width": "280px", "height": "80px", "backgroundColor": this.try.mvc.model.couleurPostIt + ""
-, "fontFamily" : this.try.mvc.model.policePostIt + "","overflow": "hidden"});*/
 		
-		SS.style(this.try.text, {"position": "absolute","top":"110px","left" : "5px", "width": "280px", "height": "80px", "backgroundColor": this.try.couleurSelect + ""
-, "fontFamily" : this.try.policeSelect + "","overflow": "hidden"});
-		this.try.stage.appendChild(this.try.text);
-		this.try.text.innerHTML=this.try.mvc.model.textPostIt;
 	 	
 
 	    	this.btnColorPolice=HH.create("button");
