@@ -35,11 +35,15 @@ class PostItModel extends WidgetModel {
 	
 	setUp() {
 		super.setUp();
-		
+		/*
 		this.textPostIt="";
 		this.couleurPostIt ="khaki";
 		this.policePostIt="Calibri";
+		*/
 		
+		this.try.textPostIt=this.mvc.model.restoreText() ;
+		this.try.couleurPostIt=this.mvc.model.restoreCouleur() ;
+		this.try.policePostIt= this.mvc.model.restorePolice() ;
 		/*
 		if(!(this.try.mvc.main.has("textData"))){
 			this.textPostIt="";
@@ -115,7 +119,7 @@ class PostItView extends WidgetView {
 		
 		this.couleurSelect=HH.create("select");
 		SS.style(this.try.couleurSelect, {"position": "absolute","top":"30px","left" : "5px","width" : "80px", "height" : "25px","backgroundColor" : "lavenderblush"});
-		
+		this.couleurSelect.value=this.try.mvc.model.couleurPostIt;
 		
 		this.option1=HH.create("option");
 		this.option1.innerHTML="khaki";
@@ -168,7 +172,7 @@ class PostItView extends WidgetView {
 		
 		
 		this.policeSelect=HH.create("select");
-	
+		this.policeSelect.value=this.try.mvc.model.policePostIt;
 		SS.style(this.try.policeSelect, {"position": "absolute","top":"30px","left" : "90px","width" : "80px", "height" : "25px","backgroundColor" : "lavenderblush"});
 		this.option16=HH.create("option");
 		this.option16.innerHTML="Calibri";
