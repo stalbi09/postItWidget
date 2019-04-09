@@ -84,7 +84,7 @@ class PostItModel extends WidgetModel {
 		//this.textPostIt="";
 		this.couleurPostIt =this.try.restoreCouleur()+"";
 		
-		//this.policePostIt="Calibri";
+		this.policePostIt=this.try.restorePolice()+"";
 		
 	}
 	
@@ -107,6 +107,7 @@ class PostItView extends WidgetView {
 		super.draw();
 		this.try.header.innerHTML = "Post-it";
 		this.text=HH.create("textarea");
+		this.try.mvc.model.dataw();
 		
 		this.text.setAttribute("id","text");
 		SS.style(this.try.text, {"position": "absolute","top":"110px","left" : "5px", "width": "280px", "height": "80px", "backgroundColor": this.try.mvc.model.couleurPostIt + ""
