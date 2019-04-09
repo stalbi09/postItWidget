@@ -44,6 +44,8 @@ class PostItModel extends WidgetModel {
 		this.try.textPostIt=this.mvc.model.restoreText() ;
 		this.try.couleurPostIt=this.mvc.model.restoreCouleur() ;
 		this.try.policePostIt= this.mvc.model.restorePolice() ;
+		console.log("ce que j veux");
+		console.log(couleurPostIt);
 		/*
 		if(!(this.try.mvc.main.has("textData"))){
 			this.textPostIt="";
