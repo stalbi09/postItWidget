@@ -79,11 +79,10 @@ class PostItModel extends WidgetModel {
 		}
 		else return policeDefault;
 	}
-	dataw(){
+	dataPostIt(){
 		
-		//this.textPostIt="";
+		this.textPostIt=this.try.restoreText()+"";
 		this.couleurPostIt =this.try.restoreCouleur()+"";
-		
 		this.policePostIt=this.try.restorePolice()+"";
 		
 	}
