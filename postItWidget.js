@@ -272,7 +272,7 @@ class PostItController extends WidgetController {
 		this.try.mvc.main.destroy("policeData");
 		
 		this.try.mvc.view.text.value="";
-		this.try.mvc.view.couleurSelect.value="kakhi";
+		this.try.mvc.view.couleurSelect.value="khaki";
 		this.try.mvc.view.policeSelect.value="Calibri";
 	}
 	
