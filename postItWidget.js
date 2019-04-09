@@ -268,9 +268,9 @@ class PostItController extends WidgetController {
 	}
 	
 	delatePostIt(){
-		let enfant= document.getElementById(PostItWidget.id);
-		let parent= document.getElementById("new");
-		parent.removeChild(PostItWidget(2,this));
+		
+		
+		document.body.removeChild(newpostit.view.stage);
 		
 		this.try.mvc.main.destroy("textData",this.textPostIt);
 		this.try.mvc.main.destroy("colorData",this.couleurPostIt);
