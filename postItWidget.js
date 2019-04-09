@@ -54,9 +54,7 @@ class PostItModel extends WidgetModel {
 		this.try.mvc.main.store("textData",this.textPostIt);
 		this.try.mvc.main.store("colorData",this.couleurPostIt);
 		this.try.mvc.main.store("policeData",this.policePostIt); 
-	       	this.try.textPostIt=this.restoreText() ;
-		this.try.couleurPostIt=this.restoreCouleur() ;
-		this.try.policePostIt= this.restorePolice() ;
+	       	
 	}
 	
 	restoreText(){
@@ -254,6 +252,8 @@ class PostItController extends WidgetController {
 		
 		var c = this.try.mvc.view.couleurSelect.value ;
 		var p = this.try.mvc.view.policeSelect.value ;
+		this.try.mvc.model.couleurPostIt=c;
+		this.try.mvc.model.policePostIt=p;
 		SS.style(this.try.mvc.view.text, {"fontFamily" : p + "","backgroundColor": c +""});
 	
 	}
