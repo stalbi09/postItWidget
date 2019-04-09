@@ -46,17 +46,6 @@ class PostItModel extends WidgetModel {
 		this.try.policePostIt= this.restorePolice() ;
 		console.log("ce que j veux");
 		console.log(couleurPostIt);
-		/*
-		if(!(this.try.mvc.main.has("textData"))){
-			this.textPostIt="";
-		}
-		if((!this.try.mvc.main.has("colorData"))){
-			this.couleurPostIt ="khaki";
-		}
-		if(!(this.try.mvc.main.has("policeData"))){
-			this.policePostIt="Calibri";
-		}
-		*/
 		
 		
 	}
@@ -69,24 +58,26 @@ class PostItModel extends WidgetModel {
 	}
 	
 	restoreText(){
+		var textDefault="";
 		if(this.try.mvc.main.has("textData")){
 		   	return this.try.mvc.main.restore("textData");
 		}
-		else return "";
+		else return textDefault;
 	}
 	restoreCouleur(){
-		
+		var couleurDefault="khaki";
 		if(this.try.mvc.main.has("colorData")){
 			return this.try.mvc.main.restore("colorData");
 		}
-		else return "khaki";
+		else return couleurDefault;
 	}
 	
 	restorePolice(){
+		var policeDefault="Calibri";
 		if(this.try.mvc.main.has("policeData")){
 			return this.try.mvc.main.restore("policeData");
 		}
-		else return "Calibri";
+		else return policeDefault;
 	}
 		
 	
