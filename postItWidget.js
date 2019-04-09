@@ -79,8 +79,14 @@ class PostItModel extends WidgetModel {
 		}
 		else return policeDefault;
 	}
+	dataw(){
 		
-	
+		//this.textPostIt="";
+		this.couleurPostIt =this.try.restoreCouleur()+"";
+		
+		//this.policePostIt="Calibri";
+		
+	}
 	
 
    
