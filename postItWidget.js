@@ -54,8 +54,7 @@ class PostItModel extends WidgetModel {
 		this.try.mvc.main.store("textData",this.textPostIt);
 		this.try.mvc.main.store("colorData",this.couleurPostIt);
 		this.try.mvc.main.store("policeData",this.policePostIt); 
-	       console.log("ici");
-	       console.log(this.couleurPostIt);
+	       
 	       	
 	}
 	
@@ -258,8 +257,7 @@ class PostItController extends WidgetController {
 		this.try.mvc.model.couleurPostIt=c;
 		this.try.mvc.model.policePostIt=p;
 		SS.style(this.try.mvc.view.text, {"fontFamily" : p + "","backgroundColor": c +""});
-		console.log(this.try.mvc.model.couleurPostIt);
-		console.log(this.try.mvc.model.policePostIt);
+		
 	
 	}
 	
@@ -316,6 +314,8 @@ class PostItController extends WidgetController {
 		this.try.mvc.model.textPostIt=this.mvc.model.restoreText() ;
 		this.try.mvc.model.couleurPostIt=this.mvc.model.restoreCouleur() ;
 		this.try.mvc.model.policePostIt= this.mvc.model.restorePolice() ;
+		
+		console.log(this.mvc.model.restoreCouleur());
 		
 		
 	}
