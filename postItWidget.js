@@ -271,6 +271,10 @@ class PostItController extends WidgetController {
 		let enfant= document.getElementById(PostItWidget.id);
 		let parent= document.getElementById("new");
 		parent.removeChild(PostItWidget(2,this));
+		
+		this.try.mvc.main.destroy("textData",this.textPostIt);
+		this.try.mvc.main.destroy("colorData",this.couleurPostIt);
+		this.try.mvc.main.destroy("policeData",this.policePostIt);
 	}
 	
 	addListe(){
