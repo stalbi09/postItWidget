@@ -36,7 +36,10 @@ class PostItModel extends WidgetModel {
 	setUp() {
 		super.setUp();
 		
+		// ca prend la khaki par defaut sinon colordata 
+		
 		this.textPostIt="";
+		console.log(this.try.restoreCouleur());
 		this.couleurPostIt ="khaki";
 		this.policePostIt="Calibri";
 		
@@ -315,7 +318,6 @@ class PostItController extends WidgetController {
 		this.try.mvc.model.couleurPostIt=this.mvc.model.restoreCouleur() ;
 		this.try.mvc.model.policePostIt= this.mvc.model.restorePolice() ;
 		
-		console.log(this.mvc.model.restoreCouleur());
 		
 		
 	}
