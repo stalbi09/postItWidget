@@ -101,11 +101,12 @@ class PostItView extends WidgetView {
 		super.draw();
 		this.try.header.innerHTML = "Post-it";
 		this.text=HH.create("textarea");
+		
 		this.text.setAttribute("id","text");
 		SS.style(this.try.text, {"position": "absolute","top":"110px","left" : "5px", "width": "280px", "height": "80px", "backgroundColor": this.try.mvc.model.couleurPostIt + ""
 , "fontFamily" : this.try.mvc.model.policePostIt + "","overflow": "hidden"});
 		this.try.stage.appendChild(this.try.text);
-		this.try.text.innerHTML=this.try.mvc.model.textPostIt;
+		this.try.text.value=this.try.mvc.model.textPostIt;
 
 
 		this.div1= HH.create("div");
