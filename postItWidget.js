@@ -35,16 +35,16 @@ class PostItModel extends WidgetModel {
 	
 	setUp() {
 		super.setUp();
-		/*
+		
 		this.textPostIt="";
 		this.couleurPostIt ="khaki";
 		this.policePostIt="Calibri";
-		*/
 		
 		
-		this.try.textPostIt="";
-		this.try.couleurPostIt=this.try.mvc.main.restore("colorData");
-		this.try.policePostIt=this.try.mvc.main.restore("policeData");
+		
+		
+		console.log=this.try.mvc.main.restore("colorData");
+		console.log=this.try.mvc.main.restore("policeData");
 		
 		
 		
