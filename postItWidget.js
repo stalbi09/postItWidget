@@ -41,7 +41,7 @@ class PostItModel extends WidgetModel {
 		
 		this.policePostIt;
 		
-		console.log(this.try.mvc.model.couleurPostIt);
+		console.log(this.try.couleurPostIt);
 		/*
 		if(!(this.try.mvc.main.has("textData"))){
 			this.textPostIt="";
