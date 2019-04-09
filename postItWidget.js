@@ -18,7 +18,6 @@ class PostItWidget extends Widget {
 	async ready() {
 		super.ready();
 		this.controller.restorePostIt();
-		// c ici que jappelle la fonction restore
 		this.controller.load();
 	}
 	
@@ -37,20 +36,20 @@ class PostItModel extends WidgetModel {
 		super.setUp();
 		
 		this.textPostIt="";
-		this.couleurPostIt; //=(this.try.mvc.main.has("colorData"))?"khaki";
-		this.policePostIt; //="Calibri";
+		this.couleurPostIt="khaki";
+		this.policePostIt="Calibri";
 		
 		/*
 		if(!(this.try.mvc.main.has("textData"))){
 			this.textPostIt="";
-		}*/
+		}
 		if(!this.try.mvc.main.has("colorData")){
 			this.couleurPostIt ="khaki";
 		}
 		if(!this.try.mvc.main.has("policeData")){
 			this.policePostIt="Calibri";
 		}
-		
+		*/
 		
 		
 	}
@@ -169,7 +168,7 @@ class PostItView extends WidgetView {
 		this.try.couleurSelect.appendChild(this.try.option12);
 		this.try.couleurSelect.appendChild(this.try.option13);
 		this.try.couleurSelect.appendChild(this.try.option14);
-		
+		this.try.couleurSelect.value=this.try.mvc.model.couleurPostIt;
 		
 		this.policeSelect=HH.create("select");
 	
@@ -193,6 +192,7 @@ class PostItView extends WidgetView {
 		this.try.policeSelect.appendChild(this.try.option19);
 		this.try.policeSelect.appendChild(this.try.option20);
 		this.try.policeSelect.appendChild(this.try.option21);
+		this.try.policeSelect.value=this.try.mvc.model.policePostIt;
 		
 		this.try.stage.appendChild(this.try.div1);
 		this.try.stage.appendChild(this.try.div2);
