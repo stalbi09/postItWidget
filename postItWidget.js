@@ -72,18 +72,21 @@ class PostItModel extends WidgetModel {
 		if(this.try.mvc.main.has("textData")){
 		   	return this.try.mvc.main.restore("textData");
 		}
+		else return "";
 	}
 	restoreCouleur(){
 		
 		if(this.try.mvc.main.has("colorData")){
 			return this.try.mvc.main.restore("colorData");
 		}
+		else return "khaki";
 	}
 	
 	restorePolice(){
 		if(this.try.mvc.main.has("policeData")){
 			return this.try.mvc.main.restore("policeData");
 		}
+		else return "Calibri";
 	}
 		
 	
