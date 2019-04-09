@@ -270,7 +270,7 @@ class PostItController extends WidgetController {
 	delatePostIt(){
 		
 		
-		document.body.removeChild(PostItWidget(i,this));
+		document.body.removeChild(PostItWidget(2,this));
 		
 		this.try.mvc.main.destroy("textData",this.textPostIt);
 		this.try.mvc.main.destroy("colorData",this.couleurPostIt);
