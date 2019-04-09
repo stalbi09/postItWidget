@@ -255,6 +255,8 @@ class PostItController extends WidgetController {
 		this.try.mvc.model.couleurPostIt=c;
 		this.try.mvc.model.policePostIt=p;
 		SS.style(this.try.mvc.view.text, {"fontFamily" : p + "","backgroundColor": c +""});
+		console.log(this.try.mvc.model.couleurPostIt);
+		console.log(this.try.mvc.model.policePostIt);
 	
 	}
 	
