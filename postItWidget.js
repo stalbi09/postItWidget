@@ -18,7 +18,6 @@ class PostItWidget extends Widget {
 	async ready() {
 		super.ready();
 		this.controller.restorePostIt();
-		// c ici que jappelle la fonction restore
 		this.controller.load();
 	}
 	
@@ -110,12 +109,7 @@ class PostItView extends WidgetView {
 
 		this.div1= HH.create("div");
 		this.div2= HH.create("div");
-		/*this.couleur= HH.create("input");
-		SS.style(this.try.couleur, {"position": "absolute","top":"30px","left" : "5px","width" : "80px", "height" : "25px", "backgroundColor" : "lavender"});
-		this.couleur.setAttribute("type","text");
-		this.couleur.setAttribute("size","8");
-		this.couleur.setAttribute("name","couleur");
-		this.try.div1.appendChild(this.try.couleur); */
+		
 		
 		this.couleurSelect=HH.create("select");
 		SS.style(this.try.couleurSelect, {"position": "absolute","top":"30px","left" : "5px","width" : "80px", "height" : "25px","backgroundColor" : "lavenderblush"});
@@ -262,12 +256,8 @@ class PostItController extends WidgetController {
 	
 	addPostIt(){
 		var i=2; // pour le id du nouveau widget
-		this.divi=HH.create("div");
-		this.divi.setAttribute("id","new");
-		document.body.appendChild(this.try.divi);
-		var newpostit;
-		newpostit=new PostItWidget(i,this);
-		this.try.divi.appendChild(newpostit.view.stage);
+		let newpostit=new PostItWidget(i,this);
+		document.body.appendChild(newpostit.view.stage);
 		i++;
 	}
 	
