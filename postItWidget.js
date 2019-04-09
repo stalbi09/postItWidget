@@ -36,12 +36,8 @@ class PostItModel extends WidgetModel {
 	setUp() {
 		super.setUp();
 		
-		
-		
-		
 		this.textPostIt="";
 		this.couleurPostIt ="khaki";
-		
 		this.policePostIt="Calibri";
 		
 
@@ -81,7 +77,7 @@ class PostItModel extends WidgetModel {
 	}
 	dataPostIt(){
 		
-		
+		this.textPostIt=this.try.restoreText()+"";
 		this.couleurPostIt =this.try.restoreCouleur()+"";
 		this.policePostIt=this.try.restorePolice()+"";
 		
