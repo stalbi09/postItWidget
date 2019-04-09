@@ -108,7 +108,7 @@ class PostItView extends WidgetView {
 		
 		
 		this.couleurSelect=HH.create("select");
-		this.try.couleurSelect.innerHTML=this.try.mvc.model.couleurPostIt;
+		this.couleurSelect.value=this.try.mvc.model.couleurPostIt;
 		SS.style(this.try.couleurSelect, {"position": "absolute","top":"30px","left" : "5px","width" : "80px", "height" : "25px","backgroundColor" : "lavenderblush"});
 		
 		
@@ -163,7 +163,7 @@ class PostItView extends WidgetView {
 		
 		
 		this.policeSelect=HH.create("select");
-		this.try.policeSelect.innerHTML=this.try.mvc.model.policePostIt;
+		this.policeSelect.value=this.try.mvc.model.policePostIt;
 		SS.style(this.try.policeSelect, {"position": "absolute","top":"30px","left" : "90px","width" : "80px", "height" : "25px","backgroundColor" : "lavenderblush"});
 		this.option16=HH.create("option");
 		this.option16.innerHTML="Calibri";
