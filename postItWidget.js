@@ -18,6 +18,7 @@ class PostItWidget extends Widget {
 	async ready() {
 		super.ready();
 		this.controller.restorePostIt();
+		// c ici que jappelle la fonction restore
 		this.controller.load();
 	}
 	
@@ -36,12 +37,9 @@ class PostItModel extends WidgetModel {
 		super.setUp();
 		
 		this.textPostIt="";
-		
-		this.couleurPostIt="kakhi";
-		
+		this.couleurPostIt ="khaki";
 		this.policePostIt="Calibri";
 		
-		console.log(this.try.couleurPostIt);
 		/*
 		if(!(this.try.mvc.main.has("textData"))){
 			this.textPostIt="";
@@ -68,21 +66,18 @@ class PostItModel extends WidgetModel {
 		if(this.try.mvc.main.has("textData")){
 		   	return this.try.mvc.main.restore("textData");
 		}
-		else return "";
 	}
 	restoreCouleur(){
 		
 		if(this.try.mvc.main.has("colorData")){
 			return this.try.mvc.main.restore("colorData");
 		}
-		else return "kakhi";
 	}
 	
 	restorePolice(){
 		if(this.try.mvc.main.has("policeData")){
 			return this.try.mvc.main.restore("policeData");
 		}
-		else return "Calibri";
 	}
 		
 	
@@ -292,9 +287,6 @@ class PostItController extends WidgetController {
 		
 		this.try.mvc.model.storeData();
 		
-		console.log(this.try.mvc.model.textPostIt);
-		console.log(this.try.mvc.model.couleurPostIt); // couleur
-		console.log(this.try.mvc.model.policePostIt); //police
 		
 
 	}
@@ -318,3 +310,8 @@ class PostItController extends WidgetController {
 	}
 	
 }
+
+
+
+
+
