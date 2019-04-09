@@ -41,7 +41,7 @@ class PostItModel extends WidgetModel {
 		this.textPostIt="";
 		
 		var cd=this.try.restoreCouleur() + "";
-		this.couleurPostIt =cd;
+		this.couleurPostIt ="khaki";
 		console.log(cd);
 		this.policePostIt="Calibri";
 		
