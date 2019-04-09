@@ -17,11 +17,8 @@ class PostItWidget extends Widget {
 	
 	async ready() {
 		super.ready();
-		this.try.mvc.main.store("textData","");
-		this.try.mvc.main.store("colorData","kakhi");
-		this.try.mvc.main.store("policeData","Calibri");
-		
 		this.controller.restorePostIt();
+		// c ici que jappelle la fonction restore
 		this.controller.load();
 	}
 	
@@ -39,18 +36,18 @@ class PostItModel extends WidgetModel {
 	setUp() {
 		super.setUp();
 		
-		this.textPostIt=this.try.mvc.main.restore("textData");
-		this.couleurPostIt=this.try.mvc.main.restore("colorData");
-		this.policePostIt=this.try.mvc.main.restore("policeData");
+		this.textPostIt="";
+		this.couleurPostIt ="khaki";
+		this.policePostIt="Calibri";
 		
 		/*
 		if(!(this.try.mvc.main.has("textData"))){
 			this.textPostIt="";
 		}
-		if(!this.try.mvc.main.has("colorData")){
+		if((!this.try.mvc.main.has("colorData"))){
 			this.couleurPostIt ="khaki";
 		}
-		if(!this.try.mvc.main.has("policeData")){
+		if(!(this.try.mvc.main.has("policeData"))){
 			this.policePostIt="Calibri";
 		}
 		*/
@@ -103,24 +100,24 @@ class PostItView extends WidgetView {
 	draw() {
 		super.draw();
 		this.try.header.innerHTML = "Post-it";
-		
 		this.text=HH.create("textarea");
 		this.text.setAttribute("id","text");
-		
 		SS.style(this.try.text, {"position": "absolute","top":"110px","left" : "5px", "width": "280px", "height": "80px", "backgroundColor": this.try.mvc.model.couleurPostIt + ""
 , "fontFamily" : this.try.mvc.model.policePostIt + "","overflow": "hidden"});
-		
-		
 		this.try.stage.appendChild(this.try.text);
 		this.try.text.innerHTML=this.try.mvc.model.textPostIt;
 
 
 		this.div1= HH.create("div");
 		this.div2= HH.create("div");
-		
+		/*this.couleur= HH.create("input");
+		SS.style(this.try.couleur, {"position": "absolute","top":"30px","left" : "5px","width" : "80px", "height" : "25px", "backgroundColor" : "lavender"});
+		this.couleur.setAttribute("type","text");
+		this.couleur.setAttribute("size","8");
+		this.couleur.setAttribute("name","couleur");
+		this.try.div1.appendChild(this.try.couleur); */
 		
 		this.couleurSelect=HH.create("select");
-		this.couleurSelect.value=this.try.mvc.model.couleurPostIt;
 		SS.style(this.try.couleurSelect, {"position": "absolute","top":"30px","left" : "5px","width" : "80px", "height" : "25px","backgroundColor" : "lavenderblush"});
 		
 		
@@ -175,7 +172,7 @@ class PostItView extends WidgetView {
 		
 		
 		this.policeSelect=HH.create("select");
-		this.policeSelect.value=this.try.mvc.model.policePostIt;
+	
 		SS.style(this.try.policeSelect, {"position": "absolute","top":"30px","left" : "90px","width" : "80px", "height" : "25px","backgroundColor" : "lavenderblush"});
 		this.option16=HH.create("option");
 		this.option16.innerHTML="Calibri";
@@ -197,12 +194,11 @@ class PostItView extends WidgetView {
 		this.try.policeSelect.appendChild(this.try.option20);
 		this.try.policeSelect.appendChild(this.try.option21);
 		
-		
 		this.try.stage.appendChild(this.try.div1);
 		this.try.stage.appendChild(this.try.div2);
 		
 		
-		
+
 	 	
 
 	    	this.btnColorPolice=HH.create("button");
@@ -266,14 +262,19 @@ class PostItController extends WidgetController {
 	
 	addPostIt(){
 		var i=2; // pour le id du nouveau widget
-		let newpostit=new PostItWidget(i,this);
-		document.body.appendChild(newpostit.view.stage);
+		this.divi=HH.create("div");
+		this.divi.setAttribute("id","new");
+		document.body.appendChild(this.try.divi);
+		var newpostit;
+		newpostit=new PostItWidget(i,this);
+		this.try.divi.appendChild(newpostit.view.stage);
 		i++;
 	}
 	
 	delatePostIt(){
 		let enfant= document.getElementById(PostItWidget.id);
-		document.body.removeChild(newpostit.view.stage);
+		let parent= document.getElementById("new");
+		parent.removeChild(PostItWidget(2,this));
 	}
 	
 	addListe(){
@@ -307,12 +308,6 @@ class PostItController extends WidgetController {
 		this.try.mvc.model.textPostIt=this.mvc.model.restoreText() ;
 		this.try.mvc.model.couleurPostIt=this.mvc.model.restoreCouleur() ;
 		this.try.mvc.model.policePostIt= this.mvc.model.restorePolice() ;
-		
-		var cr = this.try.mvc.view.couleurSelect.value;
-		var pr = this.try.mvc.view.policeSelect.value;
-		console.log(cr);
-		console.log(pr);
-		//SS.style(this.try.mvc.view.text, {"fontFamily" : p + "","backgroundColor": c +""});
 		
 		
 	}
