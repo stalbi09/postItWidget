@@ -284,6 +284,8 @@ class PostItController extends WidgetController {
 		this.try.mvc.main.store("textData","");
 		this.try.mvc.main.store("colorData","khaki");
 		this.try.mvc.main.store("policeData","Calibri");
+		
+		this.try.mvc.model.dataPostIt();
 	}
 	
 	addListe(){
