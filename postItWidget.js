@@ -41,11 +41,10 @@ class PostItModel extends WidgetModel {
 		this.policePostIt="Calibri";
 		*/
 		
-		this.try.textPostIt=this.restoreText() ;
-		this.try.couleurPostIt=this.restoreCouleur() ;
-		this.try.policePostIt= this.restorePolice() ;
-		console.log("ce que j veux");
-		console.log(couleurPostIt);
+		this.try.textPostIt="";;
+		this.try.couleurPostIt="khaki";
+		this.try.policePostIt="Calibri" ;
+		
 		
 		
 	}
@@ -55,6 +54,9 @@ class PostItModel extends WidgetModel {
 		this.try.mvc.main.store("textData",this.textPostIt);
 		this.try.mvc.main.store("colorData",this.couleurPostIt);
 		this.try.mvc.main.store("policeData",this.policePostIt); 
+	       	this.try.textPostIt=this.restoreText() ;
+		this.try.couleurPostIt=this.restoreCouleur() ;
+		this.try.policePostIt= this.restorePolice() ;
 	}
 	
 	restoreText(){
