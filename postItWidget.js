@@ -214,7 +214,7 @@ class PostItView extends WidgetView {
 		this.removePostIt=HH.create("button");
 	     	this.try.removePostIt.innerHTML = "supprimer";
 		SS.style(this.try.removePostIt, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"200px","left" : "10px", "backgroundColor" : "lavenderblush"});
-		Events.on(this.try.removePostIt, "click", event => this.try.mvc.controller.delatePostIt());
+		Events.on(this.try.removePostIt, "click", event => this.try.mvc.controller.deletePostIt());
 		this.try.stage.appendChild(this.try.removePostIt);
 		
 		this.listePuce=HH.create("button");
@@ -263,12 +263,12 @@ class PostItController extends WidgetController {
 	
 	addPostIt(){
 		var i=2; // pour le id du nouveau widget
-		this.try.newpostit=new PostItWidget(i,this);
-		document.body.appendChild(this.try.newpostit.view.stage);
+		let p=new PostItWidget(i,this);
+		document.body.appendChild(p.view.stage);
 		i++;
 	}
 	
-	delatePostIt(){
+	deletePostIt(){
 		
 		
 		
@@ -287,7 +287,7 @@ class PostItController extends WidgetController {
 		
 		this.try.changeColorPolice();
 		
-		document.body.removeChild(this.newpostit.view.stage);
+		document.body.removeChild(this.view.stage);
 	}
 	
 	addListe(){
