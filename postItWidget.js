@@ -266,7 +266,7 @@ class PostItController extends WidgetController {
 		let p=new PostItWidget(i,this);
 		document.body.appendChild(p.view.stage);
 		i++;*/
-		window.Main.loadWidget(newpostIt);
+		window.Main.loadWidget("newpostIt");
 	}
 	
 	deletePostIt(){
