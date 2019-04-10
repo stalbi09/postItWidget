@@ -12,9 +12,24 @@ class Main {
 		this._id = 0;
 	}
 	
+	restoreNbr(){
+		var nbrDefault=1;
+		if(this.try.mvc.main.has("nbrWidget")){
+		   	return this.try.mvc.main.restore("nbrWidget");
+		}
+		else return nbrDefault;
+	}
+		
+		
+		
 	load() {
-		this.loadWidget(PostItWidget);
-		//this.loadWidget(SomeWidgetClass);
+		var n=this.try.restoreNbr();
+		let i=0;
+		for(i=0;i<n;i++){
+			this.loadWidget(PostItWidget);
+			//this.loadWidget(SomeWidgetClass);
+			i++;
+		}
 	}
 	
 	loadWidget(classRef) {
