@@ -13,7 +13,7 @@ class Main {
 	}
 	
 	load() {
-		this.loadWidget(postItWidget);
+		this.loadWidget(PostItWidget);
 		//this.loadWidget(SomeWidgetClass);
 	}
 	
