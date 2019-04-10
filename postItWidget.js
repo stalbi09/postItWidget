@@ -287,7 +287,7 @@ class PostItController extends WidgetController {
 		
 		this.try.changeColorPolice();
 		
-		document.body.removeChild(this.view.stage);
+		document.body.removeChild(this.mvc.view.stage);
 	}
 	
 	addListe(){
