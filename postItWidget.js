@@ -263,15 +263,15 @@ class PostItController extends WidgetController {
 	
 	addPostIt(){
 		var i=2; // pour le id du nouveau widget
-		let newpostit=new PostItWidget(i,this);
-		document.body.appendChild(newpostit.view.stage);
+		this.try.newpostit=new PostItWidget(i,this);
+		document.body.appendChild(this.try.newpostit.view.stage);
 		i++;
 	}
 	
 	delatePostIt(){
 		
 		
-		//document.body.removeChild(PostItWidget(2,this));
+		
 		
 		this.try.mvc.main.destroy("textData");
 		this.try.mvc.main.destroy("colorData");
@@ -286,6 +286,8 @@ class PostItController extends WidgetController {
 		this.try.mvc.main.store("policeData","Calibri");
 		
 		this.try.changeColorPolice();
+		
+		document.body.removeChild(this.try.newpostit.view.stage);
 	}
 	
 	addListe(){
