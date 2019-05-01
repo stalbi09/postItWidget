@@ -17,12 +17,12 @@ class Main {
 		
 		
 	load() {
-		var i;
-		let n= this.try.mvc.model.restoreNombrePostIt();
-		for(i=0;i<n;i++){
+		/*var i;
+		let n= this.mvc.model.restoreNombrePostIt();
+		for(i=0;i<n;i++){*/
 			this.loadWidget(PostItWidget);
 			
-		}
+		//}
 	}
 	
 	loadWidget(classRef) {
