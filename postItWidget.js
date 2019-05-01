@@ -262,14 +262,9 @@ class PostItController extends WidgetController {
 	}
 	
 	addPostIt(){
-		/*var i=2; // pour le id du nouveau widget
-		let p=new PostItWidget(i,this);
-		document.body.appendChild(p.view.stage);
-		i++;*/
-		//var i=1;
+		
 		window.Main.loadWidget(PostItWidget);
-		//i++;
-		//this.try.mvc.main.store("nbrWidget",i);
+		
 		
 	}
 	
