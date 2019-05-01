@@ -276,6 +276,7 @@ class PostItController extends WidgetController {
 		window.Main.loadWidget(PostItWidget);
 		n++;
 		this.try.mvc.model.nombrePostIt=n;
+		console.log(this.try.mvc.model.nombrePostIt);
 		
 	}
 	
