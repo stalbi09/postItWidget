@@ -39,6 +39,7 @@ class PostItModel extends WidgetModel {
 		this.textPostIt="";
 		this.couleurPostIt ="khaki";
 		this.policePostIt="Calibri";
+		this.nombrePostIt=1;
 		
 
 	}
@@ -47,7 +48,9 @@ class PostItModel extends WidgetModel {
 		
 		this.try.mvc.main.store("textData",this.textPostIt);
 		this.try.mvc.main.store("colorData",this.couleurPostIt);
-		this.try.mvc.main.store("policeData",this.policePostIt); 
+		this.try.mvc.main.store("policeData",this.policePostIt);
+	        this.try.mvc.main.store("nombrePostItData",this.nombrePostIt);
+	       	
 	       
 	       	
 	}
@@ -74,6 +77,13 @@ class PostItModel extends WidgetModel {
 			return this.try.mvc.main.restore("policeData");
 		}
 		else return policeDefault;
+	}
+	restoreNombrePostIt(){
+		var nombrePostItDefault=1;
+		if(this.try.mvc.main.has("nombrePostItData")){
+			return this.try.mvc.main.restore("nombrePostItData");
+		}
+		else return nombrePostItDefault;
 	}
 	dataPostIt(){
 		
@@ -262,9 +272,10 @@ class PostItController extends WidgetController {
 	}
 	
 	addPostIt(){
-		
+		var n=1; // le nombre de post-it créer nitialiser a 1
 		window.Main.loadWidget(PostItWidget);
-		
+		n++;
+		this.try.mvc.model.nombrePostIt=n;
 		
 	}
 	
