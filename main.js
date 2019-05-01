@@ -17,16 +17,22 @@ class Main {
 		
 		
 	load() {
+		/*var i;
+		let n= window.PostItModel.restoreNombrePostIt();
+		for(i=0;i<n;i++){
+			this.loadWidget(PostItWidget);
+			
+		}*/
+	}
+	
+	loadWidget(classRef) {
+		let widget = new classRef(++this._id, this);
 		var i;
 		let n= window.PostItModel.restoreNombrePostIt();
 		for(i=0;i<n;i++){
 			this.loadWidget(PostItWidget);
 			
 		}
-	}
-	
-	loadWidget(classRef) {
-		let widget = new classRef(++this._id, this);
 		document.body.appendChild(widget.mvc.view.stage);
 		trace("new widget", widget.name);
 		this._widgets.set(widget.name, widget);
