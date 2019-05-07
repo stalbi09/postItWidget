@@ -92,6 +92,7 @@ class PostItModel extends WidgetModel {
 		this.textPostIt=this.try.restoreText()+"";
 		this.couleurPostIt =this.try.restoreCouleur()+"";
 		this.policePostIt=this.try.restorePolice()+"";
+		this.nombrePostIt=this.try.restoreNombrePostIt()+"";
 		
 	}
 	
