@@ -302,6 +302,7 @@ class PostItController extends WidgetController {
 		
 		this.try.changeColorPolice();
 		this.try.mvc.model.nombrePostIt--; // pas sur
+		console.log(this.try.mvc.model.nombrePostIt); // pas sur
 		document.body.removeChild(this.mvc.view.stage);
 	}
 	
