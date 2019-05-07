@@ -18,7 +18,7 @@ class Main {
 		
 	load() {
 		var i;
-		var n=1;//this._widgets.get("postit").mvc.model.restoreNombrePostIt();
+		var n=widget.mvc.model.restoreNombrePostIt();
 		for(i=0;i<n;i++){
 			this.loadWidget(PostItWidget);
 			
