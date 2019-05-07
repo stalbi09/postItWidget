@@ -17,8 +17,7 @@ class PostItWidget extends Widget {
 	
 	async ready() {
 		super.ready();
-		this.mvc.controller.restorePostIt();
-		// c ici que jappelle la fonction restore
+		this.mvc.controller.restorePostIt();  // je charge toutes les données à partir du navigateur
 		this.mvc.controller.load();
 	}
 	
@@ -35,7 +34,7 @@ class PostItModel extends WidgetModel {
 	
 	setUp() {
 		super.setUp();
-		
+		// les données de mon poste-it
 		this.textPostIt="";
 		this.couleurPostIt ="khaki";
 		this.policePostIt="Calibri";
@@ -45,7 +44,7 @@ class PostItModel extends WidgetModel {
 	}
 	
        storeData(){
-		
+		// j'enregistre les données entrés par l'utilisateur dans le navigateur
 		this.try.mvc.main.store("textData",this.textPostIt);
 		this.try.mvc.main.store("colorData",this.couleurPostIt);
 		this.try.mvc.main.store("policeData",this.policePostIt);
@@ -55,6 +54,7 @@ class PostItModel extends WidgetModel {
 	       	
 	}
 	
+	// les fonctions qui charges les données enregistrées dans le navigateur
 	restoreText(){
 		var textDefault="";
 		if(this.try.mvc.main.has("textData")){
@@ -85,6 +85,8 @@ class PostItModel extends WidgetModel {
 		}
 		else return nombrePostItDefault;
 	}
+	
+	// je met a jour les données qui se trouve dans le model au cas ou elles ont changé
 	dataPostIt(){
 		
 		this.textPostIt=this.try.restoreText()+"";
@@ -111,8 +113,10 @@ class PostItView extends WidgetView {
 	draw() {
 		super.draw();
 		this.try.header.innerHTML = "Post-it";
-		this.text=HH.create("textarea");
-		this.try.mvc.model.dataPostIt();
+		
+		this.text=HH.create("textarea"); // je crée mon champ de texte
+		
+		this.try.mvc.model.dataPostIt(); // je charge les données enregistré par l'utilisateur si y'en a
 		
 		this.text.setAttribute("id","text");
 		SS.style(this.try.text, {"position": "absolute","top":"110px","left" : "5px", "width": "280px", "height": "80px", "backgroundColor": this.try.mvc.model.couleurPostIt + ""
@@ -121,10 +125,10 @@ class PostItView extends WidgetView {
 		this.try.text.value=this.try.mvc.model.textPostIt;
 
 
-		this.div1= HH.create("div");
-		this.div2= HH.create("div");
+		this.div1= HH.create("div"); // va contenir le bouton select des couleurs de fond (facultatif juste pour structurer mes idées)
+		this.div2= HH.create("div"); // va contenir le bouton select des polices (facultatif)
 		
-		
+		// je crée un bouton pour que l'utilisateur selectionne la couleur de fond
 		this.couleurSelect=HH.create("select");
 		SS.style(this.try.couleurSelect, {"position": "absolute","top":"30px","left" : "5px","width" : "80px", "height" : "25px","backgroundColor" : "lavenderblush"});
 		this.couleurSelect.value=this.try.mvc.model.couleurPostIt;
@@ -157,11 +161,6 @@ class PostItView extends WidgetView {
 		this.option13.innerHTML="lightpink";
 		this.option14=HH.create("option");
 		this.option14.innerHTML="lavender";
-		
-		
-		
-		
-		
 		this.try.div1.appendChild(this.try.couleurSelect);
 		this.try.couleurSelect.appendChild(this.try.option1);
 		this.try.couleurSelect.appendChild(this.try.option2);
@@ -179,9 +178,11 @@ class PostItView extends WidgetView {
 		this.try.couleurSelect.appendChild(this.try.option14);
 		
 		
+		// je crée un bouton pour que l'utilisateur selectionne la police du text
 		this.policeSelect=HH.create("select");
 		this.policeSelect.value=this.try.mvc.model.policePostIt;
 		SS.style(this.try.policeSelect, {"position": "absolute","top":"30px","left" : "90px","width" : "80px", "height" : "25px","backgroundColor" : "lavenderblush"});
+		
 		this.option16=HH.create("option");
 		this.option16.innerHTML="Calibri";
 		this.option17=HH.create("option");
@@ -202,37 +203,44 @@ class PostItView extends WidgetView {
 		this.try.policeSelect.appendChild(this.try.option20);
 		this.try.policeSelect.appendChild(this.try.option21);
 		
+		// j'ajoute les deux div qui sontiennent les deux boutons select de la couleur et de la police dans mon stage
 		this.try.stage.appendChild(this.try.div1);
 		this.try.stage.appendChild(this.try.div2);
 		
 		
-
-	 	
-
+		// le bouton qui permet d'appliquer la couleur et la police choisie par l'utilisateur
 	    	this.btnColorPolice=HH.create("button");
 	     	this.try.btnColorPolice.innerHTML = "Appliquer";
 		SS.style(this.try.btnColorPolice, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"65px","left" : "10px", "backgroundColor" : "lavenderblush"});
 		Events.on(this.try.btnColorPolice, "click", event => this.try.mvc.controller.changeColorPolice());
 		this.try.stage.appendChild(this.try.btnColorPolice);
 		
+		
+		// le bouton "new" qui permet de créer un nouveau post-it
 		this.newPostIt=HH.create("button");
 	     	this.try.newPostIt.innerHTML = "New";
 		SS.style(this.try.newPostIt, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"30px","left" : "180px", "backgroundColor" : "lavenderblush"});
 		Events.on(this.try.newPostIt, "click", event => this.try.mvc.controller.addPostIt());
 		this.try.stage.appendChild(this.try.newPostIt);
 		
+		
+		// le bouton "supprimer" qui permet de suprimer le post-it ainsi que ses données enregistrés dans le navigateur
 		this.removePostIt=HH.create("button");
 	     	this.try.removePostIt.innerHTML = "supprimer";
 		SS.style(this.try.removePostIt, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"200px","left" : "10px", "backgroundColor" : "lavenderblush"});
 		Events.on(this.try.removePostIt, "click", event => this.try.mvc.controller.deletePostIt());
 		this.try.stage.appendChild(this.try.removePostIt);
 		
+		
+		// le bouton "list"  qui permet de créer une liste à puce dans le champ de text
 		this.listePuce=HH.create("button");
 	     	this.try.listePuce.innerHTML = "liste";
 		SS.style(this.try.listePuce, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"30px","left" : "230px", "backgroundColor" : "lavenderblush"});
 		Events.on(this.try.listePuce, "click", event => this.try.mvc.controller.addListe());
 		this.try.stage.appendChild(this.try.listePuce);
 		
+		
+		// le bouton "enregistrer" qui permet d'enregistrer les données dans le navigateur
 		this.enregistrer=HH.create("button");
 	        this.try.enregistrer.innerHTML = "enregistrer";
 		SS.style(this.try.enregistrer, {"userSelect": "none", "cursor": "pointer","position": "absolute","top":"200px","left" : "210px", "backgroundColor" : "lavenderblush"});
@@ -272,19 +280,14 @@ class PostItController extends WidgetController {
 	}
 	
 	addPostIt(){
-		var n=1; // le nombre de post-it créer nitialiser a 1
 		window.Main.loadWidget(PostItWidget);
-		n++;
-		this.try.mvc.model.nombrePostIt++;
+		this.try.mvc.model.nombrePostIt++; // le nombre de post-it est initialisé a 1 et a chaque fois qu'on ajout un autre on incremente
 		console.log(this.try.mvc.model.nombrePostIt);
 		
 	}
 	
 	deletePostIt(){
-		
-		
-		
-		
+		// on supprime les donnés du post-it et en les initialise avec leurs valeurs par default
 		this.try.mvc.main.destroy("textData");
 		this.try.mvc.main.destroy("colorData");
 		this.try.mvc.main.destroy("policeData");
@@ -309,8 +312,7 @@ class PostItController extends WidgetController {
 	}
 	
 	enregistrerPostIt(){
-		
-		
+
 		this.try.mvc.model.textPostIt= this.try.mvc.view.text.value;
 		this.try.mvc.model.couleurPostIt= this.try.mvc.view.couleurSelect.value;
 		this.try.mvc.model.policePostIt= this.try.mvc.view.policeSelect.value;
@@ -330,7 +332,7 @@ class PostItController extends WidgetController {
 		this.try.mvc.model.textPostIt=this.mvc.model.restoreText() ;
 		this.try.mvc.model.couleurPostIt=this.mvc.model.restoreCouleur() ;
 		this.try.mvc.model.policePostIt= this.mvc.model.restorePolice() ;
-		this.try.mvc.model.nombrePostIt= this.mvc.model.restoreNombrePostIt();
+		this.try.mvc.model.nombrePostIt= this.mvc.model.restoreNombrePostIt(); // pas sur
 		
 		
 		
