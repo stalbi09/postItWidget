@@ -18,7 +18,12 @@ class Main {
 		
 	load() {
 		var i;
-		var n=1;//this._widgets.get("postit").mvc.model.restoreNombrePostIt();
+		
+		/*c'est pour faire en sorte que tout les post-it crée par l'utilisateur s'affiche sur la page mais etant donné qu'il
+		 n'arrive pas a definir "widget" alors j'ai fait 1 pour qu'il affiche le premier par default mais 
+		 si vous cliquer sur le bouton "new" vous pourrez afficher les autres post-it deja enregistrer */
+		
+		var n=1;//normalement je dois ecrire "widget.mvc.model.restoreNombrePostIt();" a la place de 1
 		for(i=0;i<n;i++){
 			this.loadWidget(PostItWidget);
 			
